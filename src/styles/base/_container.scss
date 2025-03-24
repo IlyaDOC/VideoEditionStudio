@@ -8,8 +8,12 @@
         --container: 16px;
     }
 
-    @include breakpoint(xl) {
+    @include breakpoint(lg) {
         --container: 20px;
+    }
+
+    @include breakpoint(xl) {
+        --container: 0;
     }
 }
 

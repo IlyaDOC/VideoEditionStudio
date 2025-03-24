@@ -1,0 +1,23 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.hero {
+  height: 685px;
+  position: relative;
+
+  &__inner {
+    padding-top: 219px;
+  }
+
+  &__video {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    video {
+      object-fit: cover;
+    }
+  }
+}

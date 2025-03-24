@@ -1,4 +1,5 @@
 @use "mixins" as *;
+@use "variables" as *;
 
 html {
     scroll-behavior: smooth;
@@ -9,8 +10,21 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: .4s;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: $white;
+
+    @include breakpoint(md) {
+        font-size: 16px;
+    }
+
+    @include breakpoint(lg) {
+        font-size: 17px;
+    }
 }
+
 
 body.overflow-hidden {
     overflow: hidden;
@@ -160,6 +174,25 @@ section + section {
 /// TYPOGRAPHY
 /////////////////////
 
+h1, h2 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 31.2px */
+
+    @include breakpoint(md) {
+        font-size: 32px;
+        line-height: 120%;
+    }
+
+    @include breakpoint(lg) {
+        font-size: 36px;
+    }
+
+    @include breakpoint(xl) {
+        font-size: 48px;
+    }
+}
 
 
 /////////////////////

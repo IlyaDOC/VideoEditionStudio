@@ -1,13 +1,14 @@
-//@font-face {
-//    font-family: 'Stapel';
-//    src: url('/assets/fonts/') format('opentype');
-//    font-weight: 400;
-//    font-style: normal;
-//}
-//
-//@font-face {
-//    font-family: 'Stapel';
-//    src: url('/assets/fonts/') format('opentype');
-//    font-weight: 500;
-//    font-style: normal;
-//}
+@font-face {
+    font-family: "Ubuntu";
+    src: url("/assets/fonts/Ubuntu-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Stapel";
+    src: url("/assets/fonts/Ubuntu-Medium.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
