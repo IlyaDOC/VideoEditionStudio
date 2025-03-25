@@ -1,0 +1,80 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+
+.sidebar {
+  background: $white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 300;
+  width: 100%;
+  max-width: 360px;
+  overflow-y: auto;
+
+  &__inner {
+    display: grid;
+    grid-auto-rows: fit-content(100%);
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    justify-self: flex-end;
+    background: transparent;
+  }
+
+  &__nav {
+    color: $black;
+    font-size: 17px;
+    font-weight: 500;
+
+    nav {
+      & > ul {
+        display: grid;
+        gap: 16px;
+        li {
+          a {
+            padding: 10px 0;
+          }
+        }
+
+        .with-submenu {
+
+          & > a {
+            @include flexCenterBetween;
+            border-bottom: 2px solid transparent;
+
+            &:after {
+              content: "";
+              width: 24px;
+              height: 24px;
+              background: url("../icons/icon_chevron-down--black.svg") no-repeat center center;
+              transition: $transition;
+            }
+          }
+          .submenu {
+            .submenu__inner {
+              padding-left: 10px;
+
+              & > li {
+                padding: 16px 0;
+              }
+            }
+          }
+        }
+      }
+
+      [data-showdown].showdown {
+        & > a {
+          border-bottom: 2px solid $border-active;
+          &:after {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}

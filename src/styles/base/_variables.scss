@@ -5,10 +5,34 @@
   --color-black: #000000;
   --color-white: #ffffff;
   --color-white-60: #FFFFFF99;
+  --color-white-7: #FFFFFF12;
   --color-btn-normal: #8B2B87;
   --color-btn-hover: #BD5DB9;
   --color-btn-active: #63035F;
-
+  --color-btn-gray: #D9D9D9;
+  --color-btn-light-gray: #F1F1F1;
+  --color-txt-disabled: #B3B3B3;
+  --color-btn-blue-hover: #575B91;
+  --color-icon-blue: #25295F;
+  --color-border-active: #8B2B87;
+  --color-foreground-white-13: #FFFFFF21;
+  --color-bg-dark-blue: #020816;
+  --transition-style: all .3s ease-in-out;
 }
 
 $white: var(--color-white);
+$white-60: var(--color-white-60);
+$white-7: var(--color-white-7);
+$black: var(--color-black);
+$btn-normal: var(--color-btn-normal);
+$btn-hover: var(--color-btn-hover);
+$btn-active: var(--color-btn-active);
+$btn-gray: var(--color-btn-gray);
+$btn-light-gray: var(--color-btn-light-gray);
+$txt-disabled: var(--color-txt-disabled);
+$btn-blue-hover: var(--color-btn-blue-hover);
+$icon-blue: var(--color-icon-blue);
+$border-active: var(--color-border-active);
+$foreground-white-13: var(--color-foreground-white-13);
+$bg-dark-blue: var(--color-bg-dark-blue);
+$transition: var(--transition-style);

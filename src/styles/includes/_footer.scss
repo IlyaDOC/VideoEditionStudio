@@ -1,0 +1,243 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.footer {
+  margin-top: 50px;
+  padding: 10px 0 20px;
+
+  @include breakpoint(md) {
+    margin-top: 70px;
+    padding: 20px 0 30px;
+  }
+
+  @include breakpoint(lg) {
+    margin-top: 100px;
+    padding: 10px 0 30px;
+  }
+
+  @include breakpoint(xl) {
+    padding: 20px 0 40px;
+    margin-top: 170px;
+  }
+
+  &__inner {
+    display: grid;
+    gap: 16px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, fit-content(100%));
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(2, 1fr) fit-content(100%);
+      grid-template-rows: repeat(2, fit-content(100%));
+      align-items: center;
+      column-gap: 0;
+      row-gap: 20px;
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: fit-content(100%) 1fr fit-content(100%);
+    }
+  }
+
+  &__logo {
+    height: 33px;
+    padding-right: 37px;
+    text-align: center;
+    margin-top: 6px;
+    @include breakpoint(md) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      height: 49px;
+      justify-self: flex-start;
+      padding-right: 0;
+    }
+
+    @include breakpoint(lg) {
+      height: 43px;
+      margin-top: 0;
+    }
+
+    @include breakpoint(xl) {
+      height: 53px;
+    }
+  }
+
+  &__contacts {
+    @include flexCenterBetween;
+
+    @include breakpoint(md) {
+      justify-content: unset;
+      gap: 16px;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      justify-self: flex-end;
+    }
+
+    @include breakpoint(lg) {
+      grid-column: 3 / 4;
+    }
+
+    &-phone {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 19.6px */
+
+      @include breakpoint(md) {
+        font-size: 17px;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 18px;
+      }
+    }
+
+    &-socials {
+      @include flexAlignCenter;
+      gap: 8px;
+
+      &-item {
+        @include flexCenterCenter;
+
+        svg rect {
+          transition: $transition;
+        }
+
+        &.social-telegram {
+          &:hover {
+            svg rect {
+              fill: #27A6E5;
+            }
+          }
+
+        }
+
+        &.social-whatsapp {
+          &:hover {
+            svg rect {
+              fill: #48C95F;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  .btn {
+    @include breakpoint(md) {
+      grid-column: 2 / 3;
+      height: fit-content;
+      align-self: flex-end;
+      justify-self: flex-end;
+    }
+
+    @include breakpoint(lg) {
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__nav {
+
+    @include breakpoint(md) {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      padding-top: 16px;
+      border-top: 1px solid $white-7;
+    }
+
+    @include breakpoint(lg) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      border-top: none;
+      width: max-content;
+      padding-top: 0;
+      @include flexAlignCenter;
+      margin-right: 52px;
+    }
+
+    @include breakpoint(xl) {
+      margin-right: 0;
+      justify-self: center;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: row;
+      gap: 8px;
+
+      @include breakpoint(md) {
+        grid-template-columns: unset;
+        grid-auto-flow: column;
+        justify-content: space-between;
+      }
+
+      @include breakpoint(lg) {
+        gap: 16px;
+      }
+
+      @include breakpoint(xl) {
+        gap: 36px;
+      }
+
+      li {
+        a {
+          padding: 10px 0;
+          border-bottom: 2px solid transparent;
+          transition: $transition;
+
+          @include breakpoint(lg) {
+            font-size: 17px;
+          }
+
+          @include breakpoint(xl) {
+            font-size: 18px;
+          }
+
+          &:hover {
+            border-bottom: 2px solid $border-active;
+          }
+        }
+      }
+    }
+  }
+
+  &__additional {
+    display: grid;
+    gap: 16px;
+    color: $white-60;
+    padding-top: 16px;
+    border-top: 1px solid $white-7;
+
+    @include breakpoint(md) {
+      border-top: none;
+      padding-top: 36px;
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    @include breakpoint(lg) {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 0;
+      margin-right: 26px;
+      height: 100%;
+      font-size: 16px;
+    }
+
+    @include breakpoint(xl) {
+      justify-content: unset;
+      gap: 96px;
+    }
+  }
+}

@@ -7,12 +7,14 @@ import { getBrowserName } from './includes/checkbrowser.js';
 import { initializeMap } from './includes/map.js';
 import { initializePopup } from './includes/popup.js';
 import { initializeSlider } from './includes/slider.js';
+import SharedModule from "./shared/shared.module.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     getBrowserName();
     initializeMap();
     initializePopup();
     initializeSlider();
+    new SharedModule();
 });
 
 // Если браузер определен, добавляем соответствующий класс к тегу html

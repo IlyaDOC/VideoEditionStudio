@@ -1,3 +1,37 @@
 block footer
     footer#footer.footer
         .container
+            .footer__inner
+                a(href="/").footer__logo
+                    include ../../public/assets/images/logo-full.svg
+                .footer__contacts
+                    a(href="78002000600").footer__contacts-phone +7 800 2000 600
+                    .footer__contacts-socials
+                        noindex
+                            a(href="javascript:void(0)" rel="nofollow").footer__contacts-socials-item.social-telegram
+                                include ../icons/icon_telegram.svg
+                        noindex
+                            a(href="javascript:void(0)" rel="nofollow").footer__contacts-socials-item.social-whatsapp
+                                include ../icons/icon_whatsapp.svg
+                button.btn.btn-primary заказать видеоролик
+                .footer__nav
+                    nav
+                        ul
+                            li
+                                a(href="javascript:void(0)") Главная
+                            li
+                                a(href="javascript:void(0)") О студии
+                            li
+                                a(href="javascript:void(0)") Услуги
+                            li
+                                a(href="javascript:void(0)") Цены
+                            li
+                                a(href="javascript:void(0)") Портфолио
+                            li
+                                a(href="javascript:void(0)") Контакты
+                .footer__additional
+                    .footer__rights © Все права защищены <span></span>
+                    .footer__policy
+                        a(href="policy.html") Политика конфиденциальности
+                    .footer__devs
+                        a(href="https://di-project.studio/") Сделано в Di-project.Studio

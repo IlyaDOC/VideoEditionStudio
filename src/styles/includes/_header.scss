@@ -1,0 +1,340 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.header {
+  position: fixed;
+  background: transparent;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+  transition: $transition;
+  padding: 20px 0;
+
+  @include breakpoint(lg) {
+    padding: 30px 0;
+  }
+
+  @include breakpoint(xl) {
+    padding: 34px 0;
+  }
+
+  &.onscroll {
+    background: $foreground-white-13;
+    backdrop-filter: blur(10px);
+  }
+
+  &:has(.with-submenu:hover) {
+    background: $white;
+    backdrop-filter: blur(10px);
+
+    .header__logo-text {
+      svg path {
+        fill: #142B51;
+      }
+    }
+
+    .header__phone {
+      color: $black;
+    }
+
+    .header__nav {
+      nav a {
+        color: $black;
+      }
+    }
+  }
+
+  &__inner {
+    @include flexCenterBetween;
+
+    @include breakpoint(md) {
+      justify-content: unset;
+      display: grid;
+      grid-template-columns: 1fr repeat(4, fit-content(100%));
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: fit-content(100%) 1fr repeat(3, fit-content(100%));
+    }
+  }
+
+  &__logo {
+    @include breakpoint(md) {
+      @include flexAlignCenter;
+      gap: 12px;
+    }
+
+    &-icon {
+      height: 42px;
+      width: fit-content;
+
+      @include breakpoint(xl) {
+        height: 54px;
+      }
+    }
+
+    &-text {
+      display: none;
+
+      @include breakpoint(md) {
+        display: block;
+        height: fit-content;
+
+        svg {
+          height: 11px;
+        }
+      }
+
+      @include breakpoint(xl) {
+        svg {
+          height: 14px;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include breakpoint(lg) {
+      margin: 0 auto;
+      display: block;
+    }
+
+    ul {
+      @include flexAlignCenter;
+      gap: 16px;
+
+      @include breakpoint(xl) {
+        gap: 36px;
+      }
+
+      li {
+        a {
+          font-size: 17px;
+          font-weight: 500;
+          padding: 10px 0;
+          border-bottom: 2px solid transparent;
+          transition: $transition;
+
+          &:hover {
+            border-bottom: 2px solid $border-active;
+          }
+
+          @include breakpoint(xl) {
+            font-size: 18px;
+          }
+        }
+
+        &.with-submenu {
+          position: relative;
+
+          &:hover {
+            ul.submenu {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: auto;
+            }
+
+            a {
+              &:after {
+                transform: rotate(180deg);
+                background: url("../icons/icon_chevron-down--black.svg") no-repeat center center;
+              }
+            }
+          }
+
+          & > a {
+            @include flexAlignCenter;
+            gap: 8px;
+
+            &:hover {
+
+
+
+            }
+
+            &:after {
+              content: "";
+              width: 24px;
+              height: 24px;
+              transition: $transition;
+              background: url("../icons/icon_chevron-down--white.svg") no-repeat center center;
+              flex-shrink: 0;
+            }
+
+            &:before {
+              content: "";
+              background: transparent;
+              width: calc(100% + 16px);
+              height: 50px;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              user-select: none;
+            }
+          }
+
+          .submenu {
+            position: fixed;
+            top: 106px;
+            left: 0;
+            width: 100%;
+            color: $black;
+            line-height: 150%;
+            font-size: 16px;
+            background: $white;
+            font-weight: 400;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: $transition;
+            padding-bottom: 20px;
+
+            @include breakpoint(xl) {
+              font-size: 17px;
+              top: 122px;
+            }
+
+            &__inner {
+              display: grid;
+              grid-auto-flow: column;
+              align-items: flex-start;
+              gap: 20px;
+
+              & > li {
+                display: grid;
+
+                p {
+                  font-weight: 500;
+                  padding: 4px;
+
+                  @include breakpoint(xl) {
+                    padding: 10px;
+                  }
+                }
+
+                ul {
+                  display: block;
+                  li {
+                    a {
+                      font-weight: 400;
+                      padding: 4px;
+                      font-size: inherit;
+                      border-bottom: none;
+
+                      @include breakpoint(xl) {
+                        padding: 10px;
+                      }
+
+                      &:hover {
+                        background: $btn-light-gray;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+
+
+
+          }
+        }
+      }
+    }
+  }
+
+  &__language {
+    display: none;
+
+    @include breakpoint(md) {
+      @include flexCenterCenter;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 130%; /* 18.2px */
+      padding: 12px 20px;
+    }
+  }
+
+  &__phone {
+    font-size: 17px;
+    font-weight: 500;
+    transition: $transition;
+
+    @include breakpoint(md) {
+      margin-left: 16px;
+    }
+
+    @include breakpoint(xl) {
+      margin-left: 45px;
+    }
+  }
+
+  &__socilas {
+    display: none;
+
+
+    @include breakpoint(md) {
+      @include flexAlignCenter;
+      gap: 8px;
+      margin-left: 16px;
+    }
+
+    @include breakpoint(xl) {
+      margin-left: 20px;
+    }
+
+    &-item {
+      @include flexCenterCenter;
+
+      svg rect {
+        transition: $transition;
+      }
+
+      &.social-telegram {
+        &:hover {
+          svg rect {
+            fill: #27A6E5;
+          }
+        }
+
+      }
+
+      &.social-whatsapp {
+        &:hover {
+          svg rect {
+            fill: #48C95F;
+          }
+        }
+
+      }
+    }
+  }
+
+  &__menu {
+    width: 40px;
+    height: 40px;
+    @include flexCenterCenter;
+    background: $icon-blue;
+    border-radius: 50%;
+    transition: $transition;
+
+    &:hover {
+      background: $btn-blue-hover;
+    }
+
+    @include breakpoint(md) {
+      margin-left: 8px;
+    }
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+}
