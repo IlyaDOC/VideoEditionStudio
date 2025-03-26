@@ -5,8 +5,10 @@ export default class Overlay {
         this.overlay = document.getElementById("overlay");
         this.overlay.classList.add("show");
     }
+
     // Выключить
     static hideOverlay() {
+        this.overlay = document.getElementById("overlay");
         this.overlay.classList.remove("show");
     }
 }

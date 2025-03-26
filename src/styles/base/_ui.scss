@@ -65,6 +65,26 @@ li {
   list-style: none;
 }
 
+#overlay {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: $transition;
+
+  &.show {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 250;
+    background: #25295F66;
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
 
 /////////////////////
 /// SCROLLBAR

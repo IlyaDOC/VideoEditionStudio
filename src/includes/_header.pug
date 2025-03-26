@@ -15,22 +15,22 @@ block header
                             li
                                 a(href="javascript:void(0)") О студии
                             li.with-submenu
-                                a(href="javascript:void(0)") Услуги
+                                a(href="javascript:void(0)").submenu-trigger Услуги
                                 ul.submenu
                                     .container
                                         .submenu__inner
-                                            li
-                                                p Видеоинструкция
-                                                ul
+                                            li.dropdown
+                                                p.dropdown-trigger Видеоинструкция
+                                                ul.dropdown-content
                                                     li
                                                         a(href="javascript:void(0)") Смотреть все
                                                     li
                                                         a(href="javascript:void(0)") Скринкаст видео
                                                     li
                                                         a(href="javascript:void(0)") Обучающий видеоролик
-                                            li
-                                                p Видеопрезентация
-                                                ul
+                                            li.dropdown
+                                                p.dropdown-trigger Видеопрезентация
+                                                ul.dropdown-content
                                                     li
                                                         a(href="javascript:void(0)") Смотреть все
                                                     li
@@ -45,9 +45,9 @@ block header
                                                         a(href="javascript:void(0)") Промо ролик
                                                     li
                                                         a(href="javascript:void(0)") Рекламный видеоролик
-                                            li
-                                                p 3D видео
-                                                ul
+                                            li.dropdown
+                                                p.dropdown-trigger 3D видео
+                                                ul.dropdown-content
                                                     li
                                                         a(href="javascript:void(0)") Смотреть все
                                                     li
@@ -64,9 +64,9 @@ block header
                                                         a(href="javascript:void(0)") 3D видеотур для VR
                                                     li
                                                         a(href="javascript:void(0)") 3D моделирование
-                                            li
-                                                p Видеосъемка
-                                                ul
+                                            li.dropdown
+                                                p.dropdown-trigger Видеосъемка
+                                                ul.dropdown-content
                                                     li
                                                         a(href="javascript:void(0)") Смотреть все
                                                     li
@@ -89,9 +89,9 @@ block header
                                                         a(href="javascript:void(0)") Съемка конференций
                                                     li
                                                         a(href="javascript:void(0)") Видеопродакшн
-                                            li
-                                                p Анимация
-                                                ul
+                                            li.dropdown
+                                                p.dropdown-trigger Анимация
+                                                ul.dropdown-content
                                                     li
                                                         a(href="javascript:void(0)") Смотреть все
                                                     li
@@ -125,12 +125,12 @@ block header
 
                 a(href="javascript:void(0)").header__language.btn.btn-primary ru
                 a(href="tel:78002000600").header__phone +7 800 2000 600
-                .header__socilas
+                .header__socials
                     noindex
-                        a(href="javascript:void(0)" rel="nofollow").header__socilas-item.social-telegram
+                        a(href="javascript:void(0)" rel="nofollow").header__socials-item.social-telegram
                             include ../icons/icon_telegram.svg
                     noindex
-                        a(href="javascript:void(0)" rel="nofollow").header__socilas-item.social-whatsapp
+                        a(href="javascript:void(0)" rel="nofollow").header__socials-item.social-whatsapp
                             include ../icons/icon_whatsapp.svg
                 button.header__menu#sidebarShow
                     include ../icons/icon_burger.svg
