@@ -1,5 +1,3 @@
-
-
 export default class HeaderComponent {
     constructor() {
         this.header = document.getElementById("header");

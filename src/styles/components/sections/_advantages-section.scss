@@ -1,0 +1,8 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.advantages-section {
+  &__items {
+    margin-top: 24px;
+  }
+}

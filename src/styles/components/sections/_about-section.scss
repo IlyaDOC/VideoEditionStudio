@@ -1,0 +1,164 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.about-section {
+  &__inner {
+
+  }
+
+  &__pretitle {
+    color: $btn-hover;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    margin-bottom: 8px;
+
+    @include breakpoint(md) {
+      font-size: 20px;
+    }
+
+    @include breakpoint(lg) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: 24px;
+
+    @include breakpoint(md) {
+      gap: 50px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: 1fr 690px;
+      gap: 37px;
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: 580px 690px;
+      justify-content: space-between;
+    }
+  }
+
+  &__top {
+    .section-title {
+      margin-bottom: 24px;
+
+      @include breakpoint(md) {
+        margin-bottom: 32px;
+      }
+
+      @include breakpoint(lg) {
+        margin-bottom: 40px;
+      }
+
+      @include breakpoint(xl) {
+        margin-bottom: 60px;
+      }
+    }
+
+    &-subtitle {
+      line-height: 140%;
+
+      @include breakpoint(xl) {
+        max-width: 508px;
+      }
+    }
+  }
+
+  &__main {
+    display: grid;
+    gap: 24px;
+
+    @include breakpoint(md) {
+      gap: 32px;
+    }
+
+    @include breakpoint(lg) {
+      gap: 40px;
+    }
+
+    &-cards {
+      display: grid;
+      gap: 10px;
+
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include breakpoint(lg) {
+        gap: 22px;
+      }
+    }
+
+    &-additional {
+      @include flexColumn;
+      gap: 12px;
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &-title {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 150%; /* 27px */
+
+        @include breakpoint(md) {
+          max-width: 313px;
+          font-size: 20px;
+        }
+      }
+
+      .btn {
+
+      }
+    }
+  }
+}
+
+.about-section__main-card {
+  border: 1px solid $border-white-7;
+  background: $foreground-white-13;
+  position: relative;
+  --padding: 16px;
+  padding: var(--padding);
+
+  @include breakpoint(md) {
+    --padding: 24px;
+  }
+
+  .card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 12px;
+  }
+
+  .card__title {
+    font-size: 24px;
+    margin-bottom: 4px;
+    line-height: 130%;
+  }
+
+  .card__description {
+    color: $txt-gray;
+    font-size: 17px;
+    line-height: 150%;
+  }
+
+  .card__ellipse {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(130deg, #BD5DB9 12.8%, #63035F 85.77%);
+    z-index: -1;
+    top: var(--padding);
+    left: var(--padding);
+    border-radius: 50%;
+    filter: blur(10px);
+  }
+}

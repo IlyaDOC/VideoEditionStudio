@@ -1,0 +1,25 @@
+section.services-section
+    .container
+        .services-section__inner
+            .services-section__top
+                .section-title Популярные услуги
+                a(href="services.html").more-btn все услуги
+            .services-section__items
+                -
+                    var servicesItems = [
+                        "Анимационный ролик", "Видеоролик для маркетплейсов",
+                        "3D визуализация", "Корпоративный фильм", "Рекламный видеоролик",
+                        "Съемка интервью", "Репортажная съемка", "Аэросъемка",
+                        "Озвучка / дикторская озвучка",
+                    ]
+                each title, index in servicesItems
+                    a(href="service").services-section__item
+                        .services-section__item-title= title
+                        .services-section__item-description
+                            p.
+                                Короткометражные анимационные фильмы, в которых
+                                главную роль играют не живые люди, а мультипликационные
+                                персонажи или графические элементы видеоинфографики
+                        .services-section__item-image
+                            +img(`services-section-image-${index + 1}.jpg`)
+

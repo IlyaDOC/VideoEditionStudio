@@ -1,0 +1,42 @@
+section.about-section
+    .container
+        .about-section__inner
+            .about-section__pretitle Кто мы и чем занимаемся
+            .about-section__content
+                .about-section__top
+                    .section-title Мы — студия  монтажа любой сложности
+                    .about-section__top-subtitle.
+                        Video Studio Edition - это команда, представленная
+                        специалистами из различных областей сферы медиа, и
+                        предоставляющая профессиональный видеомонтаж любого
+                        видео , ролики, реклама, фильмы. Графика. Звук.
+                .about-section__main
+                    .about-section__main-cards
+                        -
+                            var aboutCards = [
+                                {
+                                    title: "8 лет",
+                                    description: "На рынке продакшена"
+                                },
+                                {
+                                    title: "Более 300",
+                                    description: "Реализованные проекты"
+                                },
+                                {
+                                    title: "40 человек",
+                                    description: "На рынке продакшена"
+                                },
+                                {
+                                    title: "Участник Ассоциации",
+                                    description: "Развитие digital-агентств"
+                                },
+                            ]
+                        each card, index in aboutCards
+                            .about-section__main-card
+                                .card__icon(style=`background: url('src/icons/icon_about-card-${index + 1}.svg') no-repeat center center`)
+                                .card__title= card.title
+                                .card__description= card.description
+                                .card__ellipse
+                    .about-section__main-additional
+                        .about-section__main-additional-title Ваша история — наш главный сценарий
+                        button.btn.btn-primary заказать видеоролик
