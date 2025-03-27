@@ -153,6 +153,28 @@ input[type="number"] {
   -moz-appearance: textfield; /* Убирает стандартный стиль в Firefox */
 }
 
+.input {
+  transition: $transition;
+  padding: 12px 16px;
+  border-radius: 2px;
+  border: 1px solid $border-gray;
+  background: $white;
+  font-size: 16px;
+  line-height: 140%;
+
+  &::placeholder {
+    color: $txt-gray;
+  }
+
+  &:focus {
+    border: 1px solid $border-blue;
+  }
+
+  &.error {
+    border: 1px solid $border-red;
+  }
+}
+
 /////////////////////
 /// BUTTONS
 /////////////////////
@@ -229,6 +251,42 @@ input[type="number"] {
   }
 }
 
+.slider-navigation {
+  @include flexAlignCenter;
+  gap: 4px;
+
+  .navigation-button {
+    transition: $transition;
+    width: 40px;
+    height: 40px;
+    @include flexCenterCenter;
+    background: $icon-blue;
+    cursor: pointer;
+    border-radius: 50%;
+
+    &:before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      background: $btn-blue-hover;
+    }
+    &--prev {
+      &:before {
+        background: url("../icons/icon_arrow-left--white-rounded.svg");
+      }
+    }
+
+    &--next {
+      &:before {
+        background: url("../icons/icon_arrow-right--white-rounded.svg");
+      }
+    }
+  }
+}
 
 /////////////////////
 /// LINKS

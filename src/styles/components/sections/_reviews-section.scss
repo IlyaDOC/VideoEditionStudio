@@ -1,0 +1,177 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.reviews-section {
+  overflow: hidden;
+
+  &__inner {
+    position: relative;
+    padding-top: 50px;
+
+    @include breakpoint(md) {
+      padding-top: 57px;
+    }
+
+    @include breakpoint(lg) {
+      padding-top: 114px;
+    }
+  }
+
+  &__apostrophe {
+    height: 65px;
+    width: auto;
+    top: 0;
+    right: calc(var(--container) * -1);
+    position: absolute;
+    z-index: -1;
+
+    @include breakpoint(md) {
+      height: 92px;
+    }
+
+    @include breakpoint(lg) {
+      height: 181px;
+    }
+
+    @include breakpoint(xl) {
+      right: -20px;
+    }
+  }
+
+
+  &__main {
+    border: 1px solid $border-white-7;
+    background: $foreground-white-13;
+    backdrop-filter: blur(3.5px);
+    padding: 20px 12px;
+
+    &-top {
+      @include flexCenterBetween;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__slider {
+
+  }
+
+  .review-item {
+    background: $white;
+    padding: 12px;
+    position: relative;
+    @include flexColumn;
+    align-items: center;
+    color: $black;
+    display: grid;
+    grid-template-rows: repeat(2, fit-content(100%)) 1fr;
+    transition: height .3s ease-in-out;
+
+    @include breakpoint(md) {
+      height: 362px;
+      padding: 12px;
+    }
+
+    @include breakpoint(xl) {
+      height: 432px;
+      padding: 18px 22px;
+    }
+
+    &.review-showed {
+      .review-item__text p{
+        -webkit-line-clamp: unset;
+        overflow: visible;
+      }
+    }
+
+    &__logo {
+      width: 40px;
+      height: 40px;
+      aspect-ratio: 1/1;
+      border-radius: 40px;
+      justify-self: center;
+
+      @include breakpoint(md) {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 2px;
+      }
+
+      @include breakpoint(xl) {
+        margin-bottom: 12px;
+      }
+    }
+
+    &__company {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 140%;
+      justify-self: center;
+      margin-bottom: 12px;
+
+      @include breakpoint(md) {
+        font-size: 20px;
+      }
+    }
+
+    &__text {
+      align-self: flex-end;
+
+      p {
+        @include textLimit(11);
+        font-size: 12px;
+        line-height: 130%;
+
+        @include breakpoint(md) {
+          font-size: 14px;
+          line-height: 140%;
+        }
+
+        @include breakpoint(xl) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__action {
+      margin-top: 12px;
+      padding: 16px 36px;
+      justify-self: center;
+      color: $txt-disabled;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 130%; /* 18.2px */
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &.show-more {
+        .hide {
+          display: none;
+        }
+      }
+
+      .show, .hide {
+        @include flexAlignCenter;
+        gap: 8px;
+
+        &:after {
+          content: "";
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .show {
+        &:after {
+          background: url("../icons/icon_arrow-down--gray-rounded.svg");
+        }
+      }
+
+      .hide {
+        &:after {
+          background: url("../icons/icon_arrow-up--gray-rounded.svg");
+        }
+      }
+
+    }
+  }
+}

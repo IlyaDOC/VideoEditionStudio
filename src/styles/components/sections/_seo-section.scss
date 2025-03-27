@@ -1,0 +1,75 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.seo-section {
+  &__inner {
+  }
+
+  &__title, h2, h3, h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 140%; /* 28px */
+    margin-bottom: 20px;
+
+    @include breakpoint(md) {
+      margin-bottom: 24px;
+      font-size: 24px;
+    }
+
+    @include breakpoint(lg) {
+      margin-bottom: 40px;
+      font-size: 36px;
+    }
+
+    @include breakpoint(xl) {
+      margin-bottom: 60px;
+    }
+
+    span {
+      color: $btn-hover;
+    }
+  }
+
+  &__content {
+
+    @include breakpoint(lg) {
+      display: grid;
+      grid-auto-columns: 472px;
+      gap: 20px;
+      grid-auto-flow: column;
+      justify-content: flex-end;
+    }
+
+    @include breakpoint(xl) {
+      grid-auto-columns: 566px;
+      gap: 32px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 140%;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 17px;
+      }
+
+      & + p {
+        margin-top: 16px;
+
+        @include breakpoint(md) {
+          margin-top: 20px;
+        }
+
+        @include breakpoint(lg) {
+          margin-top: 0;
+        }
+      }
+    }
+
+
+  }
+}

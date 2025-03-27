@@ -1,0 +1,129 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+
+.order-section {
+  &__subtitle {
+    font-weight: 500;
+    line-height: 140%;
+    margin-top: 8px;
+
+    @include breakpoint(md) {
+      font-size: 20px;
+      margin-top: 12px;
+      max-width: 612px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 20px;
+    }
+  }
+
+  &__form {
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 40px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 60px;
+    }
+
+    &-main {
+      display: grid;
+      gap: 20px;
+
+      @include breakpoint(md) {
+        gap: 24px;
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(2, 483px);
+        gap: 109px;
+      }
+
+      &-inputs {
+        display: grid;
+        gap: 20px;
+
+        @include breakpoint(md) {
+          gap: 24px;
+        }
+
+        label {
+          display: grid;
+          gap: 4px;
+
+          @include breakpoint(md) {
+            gap: 8px;
+          }
+        }
+      }
+
+      &-textarea {
+        display: grid;
+        gap: 4px;
+
+        @include breakpoint(md) {
+          gap: 8px;
+        }
+
+        textarea {
+          resize: none;
+          height: 144px;
+
+          @include breakpoint(md) {
+            height: 178px;
+          }
+
+          @include breakpoint(lg) {
+            height: 206px;
+          }
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 32px;
+
+    @include breakpoint(md) {
+      margin-top: 40px;
+    }
+
+    @include breakpoint(lg) {
+      margin: 60px auto 0;
+    }
+  }
+
+  label {
+    font-size: 16px;
+    line-height: 140%;
+
+    @include breakpoint(md) {
+      font-size: 17px;
+    }
+  }
+
+
+  .form-agree {
+    color: $white-60;
+    font-size: 14px;
+    line-height: 140%; /* 19.6px */
+    margin-top: 16px;
+
+    @include breakpoint(md) {
+      font-size: 17px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 12px;
+    }
+
+    a {
+      display: inline;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+section.companies-section
+    .container
+        .companies-section__inner
+            .section-title Нам доверяют
+    .companies-section__slider
+        .swiper
+            .swiper-wrapper
+                - var n = 1;
+                while n <= 9
+                    .swiper-slide
+                        .company-image
+                            +img(`company-image-${n}.png`)
+                    - n++;

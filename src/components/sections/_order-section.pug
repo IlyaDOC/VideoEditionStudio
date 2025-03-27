@@ -1,0 +1,26 @@
+section.order-section
+    .container
+        .order-section__inner
+            .section-title Желаете заказать видеоролик?
+            .order-section__subtitle.
+                Введите свои контактные данные, и мы свяжемся с Вами в
+                течение суток, чтобы уточнить все детали
+        .order-section__form
+            form
+                .order-section__form-main
+                    .order-section__form-main-inputs
+                        label(for="name") Имя*
+                            input(type="text" placeholder="Имя" id="name" required).input
+                        label(for="phone") Телефон*
+                            input(type="tel" placeholder="+7 (999) 999-99-99" id="phone" required data-phone-number).input
+                        label E-mail
+                            input(type="email" placeholder="example@mail.ru" required).input
+                    .order-section__form-main-textarea
+                        label Расскажите о проекте
+                        textarea.input
+                        .form-agree Нажимая кнопку “Отправить”, Вы соглашаетесь с обработкой ваших персональных данных
+                button.btn.btn-primary Отправить
+
+
+
+

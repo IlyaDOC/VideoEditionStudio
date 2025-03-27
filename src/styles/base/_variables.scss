@@ -17,8 +17,12 @@
   --color-icon-blue: #25295F;
   --color-border-active: #8B2B87;
   --color-border-white-7: #FFFFFF12;
+  --color-border-gray: #83838399;
+  --color-border-blue: #25295F;
+  --color-border-red: #DA2308;
   --color-foreground-white-13: #FFFFFF21;
   --color-bg-dark-blue: #020816;
+  --color-shadow-black-40: #00000066;
   --transition-style: all .3s ease-in-out;
 }
 
@@ -37,6 +41,10 @@ $btn-blue-hover: var(--color-btn-blue-hover);
 $icon-blue: var(--color-icon-blue);
 $border-active: var(--color-border-active);
 $border-white-7: var(--color-border-white-7);
+$border-gray: var(--color-border-gray);
+$border-blue: var(--color-border-blue);
+$border-red: var(--color-border-red);
 $foreground-white-13: var(--color-foreground-white-13);
 $bg-dark-blue: var(--color-bg-dark-blue);
+$shadow-black-40: var(--color-shadow-black-40);
 $transition: var(--transition-style);

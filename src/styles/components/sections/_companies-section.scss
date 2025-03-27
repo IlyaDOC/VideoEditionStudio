@@ -1,0 +1,80 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.companies-section {
+  &__slider {
+    margin-top: 24px;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 40px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 60px;
+    }
+  }
+
+  .swiper-slide {
+    height: 60px;
+
+    @include breakpoint(lg) {
+      height: 119px;
+    }
+
+    @include breakpoint(xl) {
+      height: 200px;
+    }
+
+    .company-image {
+      padding: 6px 5px;
+      height: 100%;
+      position: relative;
+      background: $white;
+      transition: $transition;
+      cursor: pointer;
+
+      @include breakpoint(lg) {
+        background: unset;
+        padding: 20px;
+      }
+
+      img {
+        @include breakpoint(lg) {
+          filter: grayscale(100%);
+          transition: all 0.3s ease;
+        }
+
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        mix-blend-mode: multiply;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover {
+        background: $white;
+        img {
+          filter: grayscale(0%);
+        }
+
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
