@@ -2,7 +2,7 @@
 @use "../base/variables" as *;
 
 .header {
-  position: fixed;
+  position: sticky;
   background: transparent;
   left: 0;
   top: 0;

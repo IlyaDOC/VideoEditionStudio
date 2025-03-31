@@ -37,21 +37,12 @@ export function initializeSlider() {
         },
         breakpoints: {
             744: {
-                slidesPerView: 2.7,
-                spaceBetween: 40
+                slidesPerView: 2,
+                spaceBetween: 10
             },
             1200: {
-                slidesPerView: 4.3,
-                spaceBetween: 40
-            },
-            1400: {
-                slidesPerView: 5.2,
-                spaceBetween: 40
-            },
-            1920: {
-                slidesPerView: 5.4,
-                speed: 4000,
-                spaceBetween: 80
+                slidesPerView: 3,
+                spaceBetween: 20
             }
         }
     })

@@ -1,17 +1,37 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
 .page-header {
 
 }
 
 .breadcrumbs {
+    margin-top: 8px;
+    margin-bottom: 50px;
 
+    @include breakpoint(md) {
+        margin-top: 16px;
+        margin-bottom: 70px;
+    }
+
+    @include breakpoint(lg) {
+        margin-bottom: 100px;
+    }
 }
 
 .breadcrumbs-wrapper {
-
+    @include flexAlignCenter;
+    gap: 4px;
 }
 
 .breadcrumbs-item {
+    color: $white-60;
+    font-size: 16px;
+    line-height: 140%; /* 22.4px */
 
+    &:last-child {
+        color: $white;
+    }
 }
 
 .breadcrumbs-item span {
@@ -19,6 +39,13 @@
 }
 
 .breadcrumbs-separator {
-
+    display: block;
+    &:after {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background: url("../icons/icon_breadcrumbs-separator.svg") no-repeat center center;
+        display: block;
+    }
 }
 

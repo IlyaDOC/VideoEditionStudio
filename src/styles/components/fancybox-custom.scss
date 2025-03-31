@@ -1,2 +1,20 @@
 @use "../../styles/base/mixins" as *;
+@use "../../styles/base/variables" as *;
+
+.fancybox__slide {
+  padding: unset;
+
+  @include breakpoint(md) {
+    padding: 12px;
+  }
+}
+
+.fancybox__backdrop {
+  background: #25295F66;
+  will-change: unset;
+}
+
+.fancybox__container:not(.is-compact) .fancybox__slide.has-close-btn {
+  padding: 0;
+}
 

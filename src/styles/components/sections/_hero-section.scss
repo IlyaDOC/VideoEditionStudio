@@ -4,13 +4,16 @@
 .hero {
   height: 685px;
   position: relative;
+  transform: translateY(-82px);
 
   @include breakpoint(md) {
     height: 500px;
+    transform: translateY(-106px);
   }
 
   @include breakpoint(lg) {
     height: 594px;
+    transform: translateY(-122px);
   }
 
   @include breakpoint(xl) {

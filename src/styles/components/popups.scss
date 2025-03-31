@@ -1,0 +1,201 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.popup {
+  display: none;
+}
+
+.popup-order {
+  color: $black;
+  padding: 30px 10px;
+  position: relative;
+
+  @include breakpoint(md) {
+    padding: 60px;
+  }
+
+  @include breakpoint(lg) {
+    padding: 74px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    line-height: 140%;
+    margin-top: 8px;
+
+    @include breakpoint(md) {
+      font-size: 20px;
+      margin-top: 12px;
+      max-width: 612px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 20px;
+    }
+  }
+
+  &__form {
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 40px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 60px;
+    }
+
+    &-main {
+      display: grid;
+      gap: 20px;
+
+      @include breakpoint(md) {
+        gap: 24px;
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(2, 430px);
+        gap: 40px;
+      }
+
+      &-inputs {
+        display: grid;
+        gap: 20px;
+
+        @include breakpoint(md) {
+          gap: 24px;
+        }
+
+        label {
+          display: grid;
+          gap: 4px;
+
+          @include breakpoint(md) {
+            gap: 8px;
+          }
+        }
+      }
+
+      &-textarea {
+        display: grid;
+        gap: 4px;
+
+        @include breakpoint(md) {
+          gap: 8px;
+        }
+
+        textarea {
+          resize: none;
+          height: 144px;
+
+          @include breakpoint(md) {
+            height: 178px;
+          }
+
+          @include breakpoint(lg) {
+            height: 206px;
+          }
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 32px;
+
+    @include breakpoint(md) {
+      margin: 40px auto 0;
+    }
+
+    @include breakpoint(lg) {
+      margin: 60px auto 0;
+    }
+  }
+
+  label {
+    font-size: 16px;
+    line-height: 140%;
+
+    @include breakpoint(md) {
+      font-size: 17px;
+    }
+  }
+
+
+  .form-agree {
+    color: $txt-disabled;
+    font-size: 14px;
+    line-height: 140%; /* 19.6px */
+    margin-top: 16px;
+
+    @include breakpoint(md) {
+      font-size: 17px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 12px;
+    }
+
+    a {
+      display: inline;
+      text-decoration: underline;
+    }
+  }
+
+  .is-close-btn {
+    display: none;
+  }
+
+  .popup-close {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: transparent;
+
+    @include breakpoint(md) {
+      top: 20px;
+      right: 20px;
+    }
+  }
+}
+
+.popup-success {
+  padding: 12px 20px;
+  max-width: 360px;
+  &__inner {
+    display: grid;
+    gap: 16px;
+    color: $black;
+    text-align: center;
+    justify-items: center;
+    padding: 30px 40px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 43.2px */
+  }
+
+  &__description {
+    color: $dark-gray;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+  }
+
+  .btn {
+    padding: 16px 36px;
+    width: fit-content;
+    font-size: 16px;
+  }
+
+  .is-close-btn {
+    display: none;
+  }
+}

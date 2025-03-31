@@ -1,0 +1,30 @@
+.popup.popup-order#popupOrder
+    button.popup-close(data-fancybox-close)
+        include ../icons/icon_x-black--rounded.svg
+    .popup-order__inner
+        .popup-order__inner
+            .section-title Желаете заказать видеоролик?
+            .popup-order__subtitle.
+                Введите свои контактные данные, и мы свяжемся с Вами в
+                течение суток, чтобы уточнить все детали
+        .popup-order__form
+            form
+                .popup-order__form-main
+                    .popup-order__form-main-inputs
+                        label(for="name") Имя*
+                            input(type="text" placeholder="Имя" id="name" required).input
+                        label(for="phone") Телефон*
+                            input(type="tel" placeholder="+7 (999) 999-99-99" id="phone" required data-phone-number).input
+                        label E-mail
+                            input(type="email" placeholder="example@mail.ru" required).input
+                    .popup-order__form-main-textarea
+                        label Расскажите о проекте
+                        textarea.input
+                        .form-agree Нажимая кнопку “Отправить”, Вы соглашаетесь с обработкой ваших персональных данных
+                button(data-src="#popupSuccess" data-fancybox).btn.btn-primary Отправить
+
+.popup.popup-success#popupSuccess
+    .popup-success__inner
+        .popup-success__title Спасибо
+        .popup-success__description Заявка успешно отправлена
+        button(data-fancybox-close).btn.btn-primary Закрыть окно

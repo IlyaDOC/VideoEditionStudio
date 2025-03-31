@@ -1,0 +1,13 @@
+extends ../layout/layout
+
+block title
+    - var title = 'О студии'
+    - var page = 'page-about'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('О студии')
+    section.about
+        .container
+            .about__inner
+                h1 О студии

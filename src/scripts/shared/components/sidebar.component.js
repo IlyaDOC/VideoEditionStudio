@@ -77,6 +77,11 @@ export default class SidebarComponent {
                 const dropdownTrigger = dropdownElement.querySelector(".dropdown-trigger");
                 dropdownTrigger.addEventListener("click", () => {
                     dropdownElement.classList.toggle("dropdown-open");
+                    // if (dropdownElement.classList.contains("dropdown-open")) {
+                    //     dropdownTrigger.nextElementSibling.style.height = dropdownTrigger.nextElementSibling.scrollHeight + "px";
+                    // } else {
+                    //     dropdownTrigger.nextElementSibling.style.height = "";
+                    // }
                 })
             });
         }
@@ -86,6 +91,11 @@ export default class SidebarComponent {
         if (withSubmenuElement && submenuTrigger) {
             submenuTrigger.addEventListener("click", () => {
                 withSubmenuElement.classList.toggle("submenu-open");
+                // if (withSubmenuElement.classList.contains("submenu-open")) {
+                //     submenuTrigger.nextElementSibling.style.height = submenuTrigger.nextElementSibling.scrollHeight + "px";
+                // } else {
+                //     submenuTrigger.nextElementSibling.style.height = "";
+                // }
             })
         }
 
