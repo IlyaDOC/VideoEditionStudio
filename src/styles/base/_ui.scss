@@ -189,6 +189,7 @@ input[type="number"] {
   text-transform: uppercase;
   transition: $transition;
   width: 100%;
+  height: fit-content;
 
   @include breakpoint(md) {
     border-radius: 27px;
@@ -213,6 +214,36 @@ input[type="number"] {
 
     &:active {
       background: $btn-active;
+    }
+  }
+
+  &.btn-transparent {
+    background: transparent;
+    color: $black;
+    border: 1px solid $btn-normal;
+
+    &:hover {
+      border: 2px solid $btn-hover;
+    }
+
+    &:disabled {
+      background: $btn-gray;
+      color: $txt-disabled;
+      border: 1px solid $btn-gray;
+    }
+
+    &:active {
+      background: $btn-active;
+      border: 1px solid $btn-active;
+    }
+
+    &--white-text {
+      color: $white;
+
+      &:disabled {
+        background: $btn-gray-disabled;
+        color: $txt-disabled;
+      }
     }
   }
 }
@@ -381,9 +412,13 @@ h3, .h3-title {
 }
 
 .subtitle {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 140%; /* 22.4px */
   margin-top: 12px;
+
+  @include breakpoint(md) {
+    font-size: 16px;
+  }
 
   @include breakpoint(lg) {
     font-size: 20px;

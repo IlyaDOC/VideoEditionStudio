@@ -11,6 +11,7 @@
   --color-btn-hover: #BD5DB9;
   --color-btn-active: #63035F;
   --color-btn-gray: #D9D9D9;
+  --color-btn-gray-disabled: #343A48;
   --color-btn-light-gray: #F1F1F1;
   --color-txt-disabled: #B3B3B3;
   --color-text-gray: #CFCFCF;
@@ -36,6 +37,7 @@ $btn-normal: var(--color-btn-normal);
 $btn-hover: var(--color-btn-hover);
 $btn-active: var(--color-btn-active);
 $btn-gray: var(--color-btn-gray);
+$btn-gray-disabled: var(--color-btn-gray-disabled);
 $btn-light-gray: var(--color-btn-light-gray);
 $txt-disabled: var(--color-txt-disabled);
 $txt-gray: var(--color-text-gray);

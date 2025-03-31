@@ -1,0 +1,32 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Услуги'
+    - var page = 'page-services'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Услуги')
+    section.services-hero
+        .container
+            .services-hero__inner
+                h1 Наши услуги
+                .subtitle
+                    p.
+                        Превращаем сырые кадры в яркие истории! Наша студия
+                        предлагает профессиональный монтаж видео любой сложности:
+                        рекламные ролики, клипы, корпоративные презентации, свадебные
+                        фильмы и контент для социальных сетей
+                button(data-src="#popupOrder" data-fancybox).btn.btn-primary заказать видеоролик
+        .services-hero__image
+            +img('services-hero-image.jpg')
+
+    section.services-list
+        .container
+            .services-list__inner
+                .section-title Услуги
+                .services-list__items
+                    .services-list__item
+                        .services-list__item-top
+                            .services-list__item.h3-title Видеоинструкция
+                            a(href="javascript:void(0)").btn.btn-transparent.btn-transparent--white-text Подробнее

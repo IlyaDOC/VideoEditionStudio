@@ -1,33 +1,44 @@
-section.advantages-section
+section.advantages
     .container
-        .advantages-section__inner
-            .section-title Почему выбирают нас?
-    .advantages-section__items
-        .advantages-section__item
-            .advantages-section__item-title Оперативность и пунктуальность
-            .advantages-section__item-description.
-                Основанные на строгом соблюдении всех обозначенных сроков
-                и на четком выполнении поставленных задач
-            .advantages-section__item-image
-                +img('advantages-section-image-1.jpg')
-        .advantages-section__item
-            .advantages-section__item-title Непревзойденное качество
-            .advantages-section__item-description.
-                Основанные на строгом соблюдении всех обозначенных сроков
-                и на четком выполнении поставленных задач
-            .advantages-section__item-image
-                +img('advantages-section-image-2.jpg')
-        .advantages-section__item
-            .advantages-section__item-title Профессиональное обордование
-            .advantages-section__item-description.
-                Основанные на строгом соблюдении всех обозначенных сроков
-                и на четком выполнении поставленных задач
-            .advantages-section__item-image
-                +img('advantages-section-image-3.jpg')
-        .advantages-section__item
-            .advantages-section__item-title Оперативность и пунктуальность
-            .advantages-section__item-description.
-                Основанные на строгом соблюдении всех обозначенных сроков
-                и на четком выполнении поставленных задач
-            .advantages-section__item-image
-                +img('advantages-section-image-4.jpg')
+        .advantages__inner
+            .section-title Преимущества нашей студии
+            .advantages__items
+                .advantages__item
+                    .advantages__item-image
+                        +img("advantages-item-image-1.jpg")
+                    .advantages__item-text.
+                        Опыт и репутация на рынке.  Компания имеет многолетний опыт работы
+                        в сфере производства видео и монтажа, подтвержденный успешными
+                        проектами и положительными отзывами клиентов. Это делает ее
+                        надежным партнером для заказчиков, которые ценят качество и
+                        профессионализм.
+                .advantages__item
+                    .advantages__item-image
+                        +img("advantages-item-image-2.jpg")
+                    .advantages__item-text.
+                        Использование передовых технологий. Компания инвестирует в
+                        современное оборудование (камеры, дроны, стабилизаторы) и
+                        программное обеспечение для монтажа и постпродакшна. Это
+                        позволяет создавать видео высочайшего качества с эффектной
+                        графикой, анимацией и звуковым оформлением.
+                .advantages__item
+                    .advantages__item-image
+                        +img("advantages-item-image-3.jpg")
+                    .advantages__item-text.
+                        Команда профессионалов. В штате компании работают квалифицированные
+                        специалисты — режиссеры, операторы, монтажеры, сценаристы и
+                        звукорежиссеры. Их опыт и креативный подход позволяют
+                        реализовывать даже самые сложные проекты.
+                .advantages__item
+                    .advantages__item-image
+                        +img("advantages-item-image-4.jpg")
+                    .advantages__item-text.
+                        Полный цикл производства. Компания предлагает услуги
+                        "под ключ" — от разработки концепции и написания сценария
+                        до съемки, монтажа и финальной обработки. Это избавляет клиента
+                        от необходимости искать несколько подрядчиков и упрощает процесс
+                        сотрудничества.
+    .advantages__image
+        picture
+            source(srcset="./assets/images/advantages-image-lg.svg" media="(min-width: 1200px)")
+            +img("advantages-image.svg")
