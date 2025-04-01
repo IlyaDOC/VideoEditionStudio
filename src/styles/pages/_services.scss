@@ -69,3 +69,120 @@
     }
   }
 }
+
+.services-list {
+  &__inner {
+
+  }
+
+  &__items {
+    margin-top: 24px;
+    display: grid;
+    gap: 40px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      gap: 60px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 40px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 60px;
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: 24px;
+
+    @include breakpoint(md) {
+      gap: 20px;
+    }
+
+    @include breakpoint(lg) {
+      gap: 32px;
+    }
+
+    &-top {
+      @include flexCenterBetween;
+
+      .btn {
+        width: fit-content;
+      }
+    }
+
+    &-content {
+      display: grid;
+      gap: 16px;
+
+      @include breakpoint(md) {
+        grid-template-columns: fit-content(100%) 286px;
+        gap: 71px;
+        grid-template-rows: fit-content(100%);
+      }
+
+      @include breakpoint(lg) {
+        gap: 118px;
+      }
+
+      @include breakpoint(xl) {
+        gap: 138px;
+      }
+    }
+
+    &-image {
+      height: 192px;
+      width: 100%;
+      max-width: 347px;
+
+      @include breakpoint(md) {
+        height: 196px;
+      }
+
+      @include breakpoint(lg) {
+        width: 570px;
+        height: 322px;
+        max-width: unset;
+      }
+
+      @include breakpoint(xl) {
+        width: 690px;
+        height: 390px;
+      }
+    }
+
+    &-list {
+      display: grid;
+      gap: 4px;
+      grid-auto-rows: fit-content(100%);
+
+      @include breakpoint(md) {
+        gap: 12px;
+      }
+
+      @include breakpoint(lg) {
+        gap: 16px;
+      }
+
+      li {
+        height: fit-content;
+
+        a {
+          width: fit-content;
+          color: $btn-hover;
+          font-size: 17px;
+          font-weight: 500;
+          line-height: 150%;
+          transition: $transition;
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

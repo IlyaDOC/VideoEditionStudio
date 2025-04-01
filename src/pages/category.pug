@@ -1,0 +1,122 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Видеосъемка'
+    - var page = 'page-category'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Услуги', 'Видеосъемка')
+    section.category-hero
+        .container
+            .category-hero__inner
+                h1 Видеосъемка
+                .subtitle
+                    p.
+                        Превращаем сырые кадры в яркие истории! Наша студия предлагает
+                        профессиональный монтаж видео любой сложности: рекламные ролики,
+                        клипы, корпоративные презентации, свадебные фильмы и контент для
+                        социальных сетей
+                button(data-src="#popupOrder" data-fancybox).btn.btn-primary заказать видеоролик
+        .category-hero__image
+            +img('category-hero-image.jpg')
+
+    section.category-about
+        .container
+            .category-about__inner
+                .section-title Что такое видеосъемка?
+                .category-about__text
+                    p.
+                        Видеосъемка – это искусство, которым наша студия владеет в
+                        совершенстве. Мы предлагаем профессиональные услуги
+                        видеосъемки, главная задача которой – получить яркий,
+                        впечатляющий материал для ваших видео.
+                    p.
+                        Вы можете заказать у нас видеосъемку в Москве и других городах
+                        России для любых целей, будь то создание рекламного ролика для
+                        привлечения новых клиентов, материал для видеоконтента, повышающего
+                        узнаваемость бренда или же основа для корпоративного фильма.
+
+    include ../components/sections/_advantages-section
+
+    section.category-advantages
+        .container
+            .category-advantages__inner
+                .section-title Преимущества видеосъемки у нас
+                .category-advantages__items
+                    .category-advantages__item
+                        .category-advantages__item-icon
+                            include ../../public/assets/images/category-advantages-icon-1.svg
+                        .category-advantages__item-text
+                            .category-advantages__item-title Высокая точность и детализация данных
+                            .category-advantages__item-description.
+                                Компания использует современное оборудование и технологии
+                                для аэросъемки, что позволяет получать высококачественные
+                                изображения и точные данные. Это особенно важно для проектов,
+                                требующих детального анализа, таких как строительство,
+                                картография или мониторинг объектов.
+                    .category-advantages__item
+                        .category-advantages__item-icon
+                            include ../../public/assets/images/category-advantages-icon-2.svg
+                        .category-advantages__item-text
+                            .category-advantages__item-title Экономия времени и ресурсов
+                            .category-advantages__item-description.
+                                Аэросъемка позволяет быстро охватить большие территории, что
+                                значительно сокращает время на сбор данных по сравнению с
+                                традиционными методами. Это помогает заказчику ускорить
+                                процесс принятия решений и снизить затраты на полевые работы
+                    .category-advantages__item
+                        .category-advantages__item-icon
+                            include ../../public/assets/images/category-advantages-icon-3.svg
+                        .category-advantages__item-text
+                            .category-advantages__item-title Гибкость и адаптивность
+                            .category-advantages__item-description.
+                                Компания предлагает индивидуальный подход к каждому проекту,
+                                учитывая специфические требования заказчика. Возможность
+                                проведения съемки в различных условиях (дневное/ночное время,
+                                сложный рельеф) делает услугу универсальной и удобной для
+                                разных отраслей.
+                    .category-advantages__item
+                        .category-advantages__item-icon
+                            include ../../public/assets/images/category-advantages-icon-4.svg
+                        .category-advantages__item-text
+                            .category-advantages__item-title Комплексная обработка данных
+                            .category-advantages__item-description.
+                                Помимо самой съемки, компания предоставляет услуги по обработке
+                                и анализу полученных данных. Это включает создание 3D-моделей,
+                                ортофотопланов, цифровых карт и других материалов, которые могут
+                                быть интегрированы в рабочие процессы заказчика
+
+    include ../components/sections/_feedback-section
+
+    section.category-services
+        .container
+            .category-services__inner
+                .section-title Услуги видеосъемки
+                .category-services__items
+                    -
+                        var servicesItems = [
+                            "Аэросъемка", "Корпоративный фильм",
+                            "Съемка мероприятий", "Репортажная съемка", "Съемка интервью",
+                            "Промышленная съемка", "Рекламный видеоролик", "Съемка рекламного ролика",
+                            "Видеопродакшн", "Съемка конференций",
+                        ]
+                    each title, index in servicesItems
+                        a(href = "service.html").category-services__item
+                            .category-services__item-title= title
+                            .category-services__item-description
+                                p.
+                                    Короткометражные анимационные фильмы, в которых
+                                    главную роль играют не живые люди, а мультипликационные
+                                    персонажи или графические элементы видеоинфографики
+                            .category-services__item-image
+                                +img(`category-services-image-${index + 1}.jpg`)
+
+    section.category-stages
+        .container
+            .category-stages__inner
+                .section-title Этапы работы
+                .category-stages__main
+                    .category-stages__subtitle
+                    .category-stages__items
+

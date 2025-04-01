@@ -26,7 +26,63 @@ block main
             .services-list__inner
                 .section-title Услуги
                 .services-list__items
-                    .services-list__item
-                        .services-list__item-top
-                            .services-list__item.h3-title Видеоинструкция
-                            a(href="javascript:void(0)").btn.btn-transparent.btn-transparent--white-text Подробнее
+                    -
+                        var serviceListItems = [
+                            {
+                                title: "Видеоинструкция",
+                                list: ["Скринкаст видео", "Обучающий видеоролик"]
+                            },
+                            {
+                                title: "Видеопрезентация",
+                                list: [
+                                    "Вирусное видео", "Имиджевый ролик", "Монтаж видео",
+                                    "Продающее видео", "Промо ролик", "Рекламный видеоролик",
+                                ]
+                            },
+                            {
+                                title: "3D видео",
+                                list: [
+                                    "3D анимация", "3D визуализация", "Архитектурная визуализация",
+                                    "Компьютерная графика", "3D тур", "3D видеотур для VR", "3D моделирование"
+                                ]
+                            },
+                            {
+                                title: "Видеосъемка",
+                                list: [
+                                    "Аэросъемка", "Корпоративное видео", "Съемка мероприятий",
+                                    "Репортажная съемка", "Промышленная видеосъемка", "Видеореклама",
+                                    "Съемка рекламного ролика", "Съемка конференций", "Видеопродакшн",
+                                ]
+                            },
+                            {
+                                title: "Анимация",
+                                list: [
+                                    "Скрайбинг видео", "Видеоинфографика", "Эксплейнер видео",
+                                    "Съемка интервью", "Анимационный видеоролик", "Моушн дизайн",
+                                    "Дудл видео", "Персонажная анимация", "2D анимация",
+                                    "Графический ролик", "Мультипликация",
+                                ]
+                            },
+                        ]
+                    each serviceListItem, index in serviceListItems
+                        .services-list__item
+                            .services-list__item-top
+                                .services-list__item.h3-title= serviceListItem.title
+                                a(href="category.html").btn.btn-transparent.btn-transparent--white-text Подробнее
+                            .services-list__item-content
+                                .services-list__item-image
+                                    +img(`services-list-image-${index + 1}.jpg`)
+                                ul.services-list__item-list
+                                    each listItem in serviceListItem.list
+                                        li
+                                            a(href="javascript:void(0)")= listItem
+
+    include ../components/sections/_feedback-section
+
+    include ../components/sections/_advantages-section
+
+    include ../components/sections/_reviews-section
+
+    include ../components/sections/_seo-section
+
+    include ../components/sections/_order-section

@@ -28,6 +28,10 @@
     color: $white-60;
     font-size: 16px;
     line-height: 140%; /* 22.4px */
+    transition: $transition;
+    &:hover {
+        color: $white;
+    }
 
     &:last-child {
         color: $white;

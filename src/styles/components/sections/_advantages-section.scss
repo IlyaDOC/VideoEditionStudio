@@ -76,7 +76,6 @@
 
     &-text {
       line-height: 140%;
-      font-weight: 500;
 
       @include breakpoint(md) {
         font-size: 17px;
@@ -127,3 +126,4 @@
 
   }
 }
+

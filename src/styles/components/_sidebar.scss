@@ -90,6 +90,7 @@
           .submenu-trigger {
             @include flexCenterBetween;
             border-bottom: 2px solid transparent;
+            transition: border-bottom-color .3s ease-in-out;
 
             a {
               flex-shrink: 0;
@@ -146,6 +147,7 @@
           &-trigger {
             @include flexCenterBetween;
             border-bottom: 2px solid transparent;
+            transition: border-bottom-color .3s ease-in-out;
             padding: 10px 0;
 
             a {

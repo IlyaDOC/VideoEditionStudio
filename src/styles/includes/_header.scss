@@ -118,9 +118,6 @@
           border-bottom: 2px solid transparent;
           transition: $transition;
 
-          &:hover {
-            border-bottom: 2px solid $border-active;
-          }
 
           @include breakpoint(xl) {
             font-size: 18px;
@@ -130,6 +127,15 @@
         &.with-submenu {
           position: relative;
           cursor: pointer;
+
+          .submenu-trigger {
+            transition: border-bottom-color .3s ease-in-out;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+              border-bottom: 2px solid $border-active;
+            }
+          }
 
           &:hover {
             ul.submenu {
@@ -149,6 +155,7 @@
 
               &__arrow {
                 transform: rotate(180deg);
+
                 svg path {
                   stroke: $black;
                 }
@@ -173,6 +180,7 @@
               transition: $transition;
               width: 24px;
               height: 24px;
+
               svg path {
                 transition: $transition;
               }
@@ -250,6 +258,7 @@
 
                 .dropdown-content {
                   display: block;
+
                   li {
                     a {
                       font-weight: 400;
