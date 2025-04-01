@@ -74,7 +74,7 @@ export default class SidebarComponent {
         const dropdownElements = document.querySelectorAll(".sidebar .dropdown");
         if (dropdownElements) {
             dropdownElements.forEach(dropdownElement => {
-                const dropdownTrigger = dropdownElement.querySelector(".dropdown-trigger");
+                const dropdownTrigger = dropdownElement.querySelector(".dropdown-trigger__arrow");
                 dropdownTrigger.addEventListener("click", () => {
                     dropdownElement.classList.toggle("dropdown-open");
                     // if (dropdownElement.classList.contains("dropdown-open")) {
@@ -87,7 +87,7 @@ export default class SidebarComponent {
         }
 
         const withSubmenuElement = document.querySelector(".sidebar .with-submenu");
-        const submenuTrigger = withSubmenuElement.querySelector(".submenu-trigger");
+        const submenuTrigger = withSubmenuElement.querySelector(".submenu-trigger__arrow");
         if (withSubmenuElement && submenuTrigger) {
             submenuTrigger.addEventListener("click", () => {
                 withSubmenuElement.classList.toggle("submenu-open");

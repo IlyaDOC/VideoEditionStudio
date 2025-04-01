@@ -23,6 +23,7 @@
   &__inner {
     display: grid;
     grid-template-rows: fit-content(100%)  1fr fit-content(100%) fit-content(100%);
+    min-height: 100%;
   }
 
   &__close {
@@ -58,9 +59,16 @@
 
             .submenu-trigger {
               border-bottom: 2px solid $border-active;
-              &:after {
-                transform: rotate(180deg);
+
+              &__arrow {
+                svg {
+                  transform: rotate(180deg);
+                }
               }
+
+              //&:after {
+              //  transform: rotate(180deg);
+              //}
             }
           }
 
@@ -83,12 +91,31 @@
             @include flexCenterBetween;
             border-bottom: 2px solid transparent;
 
-            &:after {
-              content: "";
-              width: 24px;
-              height: 24px;
-              background: url("../icons/icon_chevron-down--black.svg") no-repeat center center;
-              transition: $transition;
+            a {
+              flex-shrink: 0;
+            }
+
+            //&:after {
+            //  content: "";
+            //  width: 24px;
+            //  height: 24px;
+            //  background: url("../icons/icon_chevron-down--black.svg") no-repeat center center;
+            //  transition: $transition;
+            //}
+
+            &__arrow {
+              display: flex;
+              justify-content: flex-end;
+              width: 100%;
+
+              svg {
+                width: 24px;
+                height: 24px;
+                transition: $transition;
+                path {
+                  stroke: $black;
+                }
+              }
             }
           }
         }
@@ -106,8 +133,11 @@
 
             .dropdown-trigger {
               border-bottom: 2px solid $border-active;
-              &:after {
-                transform: rotate(180deg);
+
+              &__arrow {
+                svg {
+                  transform: rotate(180deg);
+                }
               }
             }
           }
@@ -118,13 +148,35 @@
             border-bottom: 2px solid transparent;
             padding: 10px 0;
 
-            &:after {
-              content: "";
-              width: 24px;
-              height: 24px;
-              background: url("../icons/icon_chevron-down--black.svg") no-repeat center center;
-              transition: $transition;
+            a {
+              flex-shrink: 0;
+              padding: 0;
             }
+
+            &__arrow {
+              display: flex;
+              justify-content: flex-end;
+              width: 100%;
+
+              svg {
+                width: 24px;
+                height: 24px;
+                transition: $transition;
+                path {
+                  stroke: $black;
+                }
+              }
+            }
+
+            //&:after {
+            //  content: "";
+            //  width: 24px;
+            //  height: 24px;
+            //  background: url("../icons/icon_chevron-down--black.svg") no-repeat center center;
+            //  transition: $transition;
+            //}
+
+
           }
 
           &-content {
