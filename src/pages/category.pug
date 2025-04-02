@@ -112,11 +112,15 @@ block main
                             .category-services__item-image
                                 +img(`category-services-image-${index + 1}.jpg`)
 
-    section.category-stages
-        .container
-            .category-stages__inner
-                .section-title Этапы работы
-                .category-stages__main
-                    .category-stages__subtitle
-                    .category-stages__items
+    include ../components/sections/_stages-section
 
+    include ../components/sections/_components-section
+
+    include ../components/sections/_portfolio-section
+    +portfolioSection()
+
+    include ../components/sections/_reviews-section
+
+    include ../components/sections/_seo-section
+
+    include ../components/sections/_order-section

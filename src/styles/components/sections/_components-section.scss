@@ -1,0 +1,60 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.components-section {
+  &__items {
+    margin-top: 24px;
+    display: grid;
+    gap: 20px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      row-gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 10px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 40px;
+      row-gap: 32px;
+      column-gap: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 24px;
+
+    &-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(130deg, #BD5DB9 12.8%, #63035F 85.77%);
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        filter: blur(10px);
+      }
+    }
+
+    &-text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 140%; /* 22.4px */
+
+      @include breakpoint(lg) {
+        font-size: 17px;
+        line-height: 150%;
+      }
+    }
+  }
+}

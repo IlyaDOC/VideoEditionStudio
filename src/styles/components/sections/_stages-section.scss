@@ -1,0 +1,95 @@
+@use "../../base/mixins" as *;
+@use "../../base/variables" as *;
+
+.stages-section {
+  &__main {
+    margin-top: 8px;
+    display: grid;
+    gap: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      gap: 20px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 40px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%; /* 19.6px */
+
+    @include breakpoint(md) {
+      font-size: 20px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: 16px;
+
+    @include breakpoint(md) {
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    padding: 16px;
+    border: 1px solid $border-white-7;
+    background: $foreground-white-13;
+    backdrop-filter: blur(10px);
+
+    @include breakpoint(md) {
+      padding: 24px;
+    }
+
+    &-number {
+      @include flexAlignCenter;
+      gap: 2px;
+      margin-bottom: 4px;
+
+      @include breakpoint(md) {
+        margin-bottom: 24px;
+      }
+
+      span {
+        &:nth-child(1) {
+          color: $btn-hover;
+          font-size: 24px;
+          line-height: 130%; /* 31.2px */
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+          color: $btn-normal;
+          font-size: 17px;
+          line-height: 150%; /* 25.5px */
+        }
+      }
+    }
+
+    &-title {
+      font-size: 20px;
+      line-height: 140%; /* 28px */
+      margin-bottom: 2px;
+
+      @include breakpoint(md) {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+    }
+
+    &-description {
+      color: $white-60;
+      font-size: 14px;
+      line-height: 140%; /* 19.6px */
+
+      @include breakpoint(md) {
+        font-size: 17px;
+      }
+    }
+  }
+}

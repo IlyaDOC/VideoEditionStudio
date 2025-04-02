@@ -1,16 +1,19 @@
-section.portfolio-section
-    .container
-        .portfolio-section__inner
-            .portfolio-section__top
-                .section-title Портфолио
-                a(href="portfolio.html").more-btn Смотреть все
-            .portfolio-section__items
-                - var n = 1;
-                while n <= 9
-                    a(href="project.html").portfolio-section__item
-                        .portfolio-section__item-title Название
-                        .portfolio-section__item-description Компания
-                        .portfolio-section__item-image
-                            +img(`portfolio-image-${n}.jpg`)
-                    - n++;
-            button.btn.btn-primary заказать видеоролик
+mixin portfolioSection(type)
+    section.portfolio-section
+        .container
+            .portfolio-section__inner
+                .portfolio-section__top
+                    .section-title Портфолио
+                    a(href="portfolio.html").more-btn Смотреть все
+                .portfolio-section__items
+                    - var n = 1;
+                    while n <= 9
+                        a(href="project.html").portfolio-section__item
+                            .portfolio-section__item-title Название
+                            .portfolio-section__item-description Компания
+                            .portfolio-section__item-image
+                                +img(`portfolio-image-${n}.jpg`)
+                        - n++;
+                if (type === "default")
+                    button.btn.btn-primary заказать видеоролик
+

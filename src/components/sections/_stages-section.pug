@@ -1,0 +1,43 @@
+section.stages-section
+    .container
+        .stages-section__inner
+            .section-title Этапы работы
+            .stages-section__main
+                .stages-section__subtitle Создание фильмов включает в себя несколько важных стадий
+                .stages-section__items
+                    -
+                        var stages = [
+                            {
+                                title: "Информация",
+                                description: "Получаем от клиента ТЗ, изучаем сайт, каталоги продукции, фото площадок. Задаем ряд вопросов, чтобы подобрать инструментарий."
+                            },
+                            {
+                                title: "Коммерческое предложение",
+                                description: "После анализа информации делаем расчеты в 2-3 вариантах, создаем креативные концепции, готовим КП и пакет документов."
+                            },
+                            {
+                                title: "Пре-продакшн",
+                                description: "Пишем сценарий, прорабатываем логистику, собираем команду и определяем роли, бронируем технику и свет."
+                            },
+                            {
+                                title: "Продакшн",
+                                description: "Проводим профессиональную съемку на площадках клиента и партнеров, аэросъемку, запись интервью."
+                            },
+                            {
+                                title: "Пост-продакшн",
+                                description: "Монтируем видео, делаем цветокоррекцию, интегрируем графику 2D и 3D со спецэффектами, создаем озвучание проекта."
+                            },
+                            {
+                                title: "Правки",
+                                description: "Получаем от заказчикам лист правок, вносим и выдаем финальный результат. Ваш ролик готов!"
+                            },
+                        ]
+                    each stage, index in stages
+                        .stages-section__item
+                            .stages-section__item-number
+                                span= `0${index + 1}`
+                                span /
+                                span= `0${stages.length}`
+                            .stages-section__item-title= stage.title
+                            .stages-section__item-description= stage.description
+
