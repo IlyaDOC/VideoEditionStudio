@@ -111,13 +111,17 @@
       }
 
       li {
+        transition: border-bottom-color .3s ease-in-out;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          border-bottom: 2px solid $border-active;
+        }
+
         a {
           font-size: 17px;
           font-weight: 500;
           padding: 10px 0;
-          border-bottom: 2px solid transparent;
-          transition: $transition;
-
 
           @include breakpoint(xl) {
             font-size: 18px;
@@ -127,14 +131,11 @@
         &.with-submenu {
           position: relative;
           cursor: pointer;
+          transition: border-bottom-color .3s ease-in-out;
+          border-bottom: 2px solid transparent;
 
-          .submenu-trigger {
-            transition: border-bottom-color .3s ease-in-out;
-            border-bottom: 2px solid transparent;
-
-            &:hover {
-              border-bottom: 2px solid $border-active;
-            }
+          &:hover {
+            border-bottom: 2px solid $border-active;
           }
 
           &:hover {

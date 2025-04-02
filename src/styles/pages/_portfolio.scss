@@ -1,0 +1,240 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+
+.portfolio {
+  &__filter {
+    margin-top: 24px;
+    @include flexAlignCenter;
+    gap: 24px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 11px 0;
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-inline: visible;
+    //scrollbar-width: thin;
+    //scrollbar-color: $btn-normal $dark-gray;
+
+    @include breakpoint(md) {
+      overflow-x: unset;
+      overflow-y: unset;
+      flex-wrap: wrap;
+    }
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      justify-content: space-between;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 40px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 60px;
+    }
+
+    &::-webkit-scrollbar {
+      border-radius: 3px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $dark-gray;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $btn-normal;
+      border-radius: 5px;
+    }
+
+
+
+    &-item {
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 130%; /* 18.2px */
+      text-transform: uppercase;
+      padding: 4px 0;
+      position: relative;
+      transition: $transition;
+
+      @include breakpoint(lg) {
+        font-size: 16px;
+      }
+
+      &:after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        display: block;
+        background: $btn-normal;
+        transition: $transition;
+      }
+
+      &.active, &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: 10px;
+    margin-top: 16px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 24px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 40px;
+    }
+  }
+
+  &__item {
+    height: 190px;
+    position: relative;
+    display: grid;
+    text-align: center;
+    transition: $transition;
+    grid-auto-rows: fit-content(100%);
+    align-content: center;
+    cursor: pointer;
+
+    @include breakpoint(md) {
+      height: 194px;
+    }
+
+    @include breakpoint(lg) {
+      height: 208px;
+    }
+
+    @include breakpoint(xl) {
+      height: 253px;
+    }
+
+    &:hover {
+      @include breakpoint(lg) {
+        scale: 1.09;
+      }
+
+      @include breakpoint(xl) {
+        scale: 1.08;
+      }
+
+      .portfolio__item-title {
+        @include breakpoint(lg) {
+          opacity: 1;
+          visibility: visible;
+        }
+
+      }
+
+      .portfolio__item-description {
+        @include breakpoint(lg) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .portfolio__item-image:after {
+        @include breakpoint(lg) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 140%; /* 28px */
+      transition: inherit;
+
+      @include breakpoint(lg) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 140%;
+      transition: inherit;
+
+      @include breakpoint(lg) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      &:after {
+        content: "";
+        background: $shadow-black-40;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: inherit;
+
+        @include breakpoint(lg) {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 16px 36px;
+    width: fit-content;
+    margin: 24px auto 0;
+
+    @include breakpoint(md) {
+      margin: 32px auto 0;
+    }
+
+    @include breakpoint(lg) {
+      margin: 40px auto 0;
+    }
+
+    @include breakpoint(60) {
+      margin: 40px auto 0;
+    }
+  }
+}

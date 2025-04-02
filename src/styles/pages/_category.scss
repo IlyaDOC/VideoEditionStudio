@@ -200,19 +200,6 @@
 
 .category-services {
 
-  &__top {
-    @include flexColumn;
-    gap: 16px;
-    margin-bottom: 24px;
-
-    @include breakpoint(md) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-
   &__items {
     margin-top: 24px;
     display: grid;

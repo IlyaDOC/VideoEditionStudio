@@ -1,0 +1,79 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Цены'
+    - var page = 'page-prices'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Цены')
+    section.prices
+        .container
+            .prices__inner
+                h1 Прайс-лист
+                .prices__blocks-wrapper
+                    - var n = 6;
+                    while n > 0
+                        .prices__block
+                            .prices__block-title Видеопрезентация
+                            .prices__block-subtitle Цены указаны в рублях за одну минуту
+                            .prices__block-items
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Видеоролик для блокчейн проектов
+                                    .prices__block-item-price от 125,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Видеоролик для франшиз
+                                    .prices__block-item-price от 85,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name.disabled Видеоролик для стартапов
+                                    .prices__block-item-price от 45,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name.disabled Видеоролик для медицинских центров
+                                    .prices__block-item-price от 80,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Видеоролик для производства
+                                    .prices__block-item-price от 95,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Видеоролик для айти компаний
+                                    .prices__block-item-price от 100,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Видеоролик для отелей
+                                    .prices__block-item-price от 65,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Видеоролик для маркетплейсов
+                                    .prices__block-item-price от 97,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Ролик для бизнеса
+                                    .prices__block-item-price от 75,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Ролик для сайта
+                                    .prices__block-item-price от 65,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Для мобильного приложения
+                                    .prices__block-item-price от 55,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name HR-видеоролик
+                                    .prices__block-item-price от 80,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Трейлер
+                                    .prices__block-item-price от 77,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Для интернет-магазина
+                                    .prices__block-item-price от 60,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Отчетное
+                                    .prices__block-item-price от 110,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name Выставочное
+                                    .prices__block-item-price от 150,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name О бизнес процессах
+                                    .prices__block-item-price от 95,000
+                                .prices__block-item
+                                    a(href="javascript:void(0)").prices__block-item-name По охране труда
+                                    .prices__block-item-price от 66,000
+                        - n--;
+
+    include ../components/sections/_seo-section
+
+    include ../components/sections/_order-section

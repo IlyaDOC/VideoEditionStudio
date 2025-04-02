@@ -1,0 +1,123 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.prices {
+  &__blocks-wrapper {
+    margin-top: 24px;
+    display: grid;
+    gap: 32px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 58px;
+      row-gap: 40px;
+      justify-content: space-between;
+      margin-top: 32px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 40px;
+      column-gap: 118px;
+      row-gap: 54px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 60px;
+      column-gap: 138px;
+      row-gap: 60px;
+    }
+  }
+
+  &__block {
+    &-title {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%; /* 27px */
+      margin-bottom: 2px;
+
+      @include breakpoint(md) {
+        font-size: 24px;
+        line-height: 130%;
+        margin-bottom: 8px;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 32px;
+      }
+    }
+
+    &-subtitle {
+      color: $white-60;
+      font-size: 14px;
+      line-height: 140%; /* 19.6px */
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 17px;
+      }
+    }
+
+    &-items {
+      margin-top: 16px;
+      display: grid;
+      gap: 8px;
+
+      @include breakpoint(md) {
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      @include breakpoint(lg) {
+        gap: 16px;
+        margin-top: 24px;
+      }
+    }
+
+    &-item {
+      display: grid;
+      grid-template-columns: fit-content(100%) 1fr;
+      gap: 8px;
+
+      @include breakpoint(lg) {
+        gap: 20px;
+      }
+
+      &-name {
+        color: $btn-hover;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 140%; /* 19.6px */
+        transition: $transition;
+
+        @include breakpoint(md) {
+          font-size: 17px;
+        }
+
+
+        &:hover {
+          color: $white;
+        }
+
+        &.disabled {
+          color: $txt-disabled;
+          cursor: default;
+          pointer-events: none;
+        }
+      }
+
+      &-price {
+        font-size: 14px;
+        line-height: 140%; /* 19.6px */
+        justify-self: flex-end;
+        white-space: nowrap;
+
+        @include breakpoint(md) {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}

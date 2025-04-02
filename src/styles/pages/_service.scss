@@ -1,0 +1,225 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.service-hero {
+  height: 548px;
+  position: relative;
+
+  @include breakpoint(md) {
+    height: 350px;
+    display: grid;
+    align-items: center;
+  }
+
+  @include breakpoint(lg) {
+    height: 494px;
+  }
+
+  @include breakpoint(xl) {
+    height: 790px;
+  }
+
+  &__inner {
+    padding-top: 93px;
+
+    @include breakpoint(md) {
+      max-width: 526px;
+      padding-top: unset;
+    }
+
+    @include breakpoint(lg) {
+      max-width: 690px;
+    }
+
+
+    .btn {
+      margin-top: 20px;
+
+      @include breakpoint(md) {
+        margin-top: 24px;
+      }
+
+      @include breakpoint(lg) {
+        margin-top: 32px;
+      }
+    }
+  }
+
+  &__image {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+    }
+
+    video, img {
+      object-fit: cover;
+    }
+  }
+}
+
+.service-about {
+  &__text {
+    margin-top: 24px;
+    display: grid;
+    gap: 12px;
+    line-height: 140%;
+
+
+    @include breakpoint(md) {
+      margin-top: 32px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 40px;
+      gap: 20px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 60px;
+    }
+  }
+}
+
+.service-projects {
+  &__items {
+    display: grid;
+    gap: 10px;
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 32px;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 60px;
+    }
+  }
+
+  &__item {
+    height: 190px;
+    position: relative;
+    display: grid;
+    text-align: center;
+    transition: $transition;
+    grid-auto-rows: fit-content(100%);
+    align-content: center;
+    cursor: pointer;
+
+    @include breakpoint(md) {
+      height: 194px;
+    }
+
+    @include breakpoint(lg) {
+      height: 208px;
+    }
+
+    @include breakpoint(xl) {
+      height: 253px;
+    }
+
+    &:hover {
+      @include breakpoint(lg) {
+        scale: 1.09;
+      }
+
+      @include breakpoint(xl) {
+        scale: 1.08;
+      }
+      .service-projects__item-title {
+        @include breakpoint(lg) {
+          opacity: 1;
+          visibility: visible;
+        }
+
+      }
+
+      .service-projects__item-description {
+        @include breakpoint(lg) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .service-projects__item-image:after {
+        @include breakpoint(lg) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 140%; /* 28px */
+      transition: inherit;
+
+      @include breakpoint(lg) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 140%;
+      transition: inherit;
+
+      @include breakpoint(lg) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      &:after {
+        content: "";
+        background: $shadow-black-40;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: inherit;
+
+        @include breakpoint(lg) {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+}

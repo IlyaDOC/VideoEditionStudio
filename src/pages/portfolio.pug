@@ -1,0 +1,40 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Портфолио'
+    - var page = 'page-portfolio'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Портфолио')
+    section.portfolio
+        .container
+            .portfolio__inner
+                h1 Портфолио
+                .portfolio__filter
+                    a(href="javascript:void(0)").portfolio__filter-item.active Все
+                    a(href="javascript:void(0)").portfolio__filter-item Видеоинструкция
+                    a(href="javascript:void(0)").portfolio__filter-item Анимация
+                    a(href="javascript:void(0)").portfolio__filter-item Видеопрезентация
+                    a(href="javascript:void(0)").portfolio__filter-item 3D видео
+                    a(href="javascript:void(0)").portfolio__filter-item Видеосъемка
+                .portfolio__items
+                    - var n = 1;
+                    while n <= 9
+                        a(href="project.html").portfolio__item
+                            .portfolio__item-title Название
+                            .portfolio__item-description Компания
+                            .portfolio__item-image
+                                +img(`portfolio-image-${n}.jpg`)
+                        - n++;
+                a(href="javascript:void(0)").btn.btn-primary Показать еще
+
+    include ../components/sections/_feedback-section
+
+    include ../components/sections/_advantages-section
+
+    include ../components/sections/_reviews-section
+
+    include ../components/sections/_seo-section
+
+    include ../components/sections/_order-section

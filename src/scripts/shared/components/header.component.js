@@ -10,11 +10,17 @@ export default class HeaderComponent {
 
     headerScrollBehavior() {
         window.addEventListener("scroll", ()=> {
-            if (window.scrollY > 0) {
-                this.header.classList.add("onscroll");
-            } else {
-                this.header.classList.remove("onscroll");
-            }
+            this.addOnscrollClass();
         });
+
+        this.addOnscrollClass();
+    }
+
+    addOnscrollClass() {
+        if (window.scrollY > 0) {
+            this.header.classList.add("onscroll");
+        } else {
+            this.header.classList.remove("onscroll");
+        }
     }
 }

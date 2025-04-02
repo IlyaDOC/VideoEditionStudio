@@ -1,15 +1,15 @@
 extends ../layout/layout
 
 block title
-    - var title = 'Видеосъемка'
-    - var page = 'page-category'
+    - var title = 'Аэросъемка'
+    - var page = 'page-service'
 
 block main
     include ../components/_breadcrumbs
-    +breadcrumbs('Услуги', 'Видеосъемка')
-    section.category-hero
+    +breadcrumbs('Услуги', 'Видеосъемка', 'Аэросъемка')
+    section.service-hero
         .container
-            .category-hero__inner
+            .service-hero__inner
                 h1 Видеосъемка
                 .subtitle
                     p.
@@ -18,26 +18,24 @@ block main
                         клипы, корпоративные презентации, свадебные фильмы и контент для
                         социальных сетей
                 button(data-src="#popupOrder" data-fancybox).btn.btn-primary заказать видеоролик
-        .category-hero__image
-            +img('category-hero-image.jpg')
-
-    section.category-about
+        .service-hero__image
+            +img('service-hero-image.jpg')
+            
+    section.service-about
         .container
-            .category-about__inner
-                .section-title Что такое аэросъемка?
-                .category-about__text
+            .service-about__inner
+                .section-title Что такое видеосъемка?
+                .service-about__text
                     p.
-                        Аэросъемка – это возможность запечатлеть различные объекты и
-                        события с уникальных ракурсов и перспектив, недоступных при
-                        традиционной наземной съемке. В работе над каждым проектом
-                        используются дроны и квадрокоптеры, позволяющие получить
-                        совершенные кадры. 
+                        Видеосъемка – это искусство, которым наша студия владеет в
+                        совершенстве. Мы предлагаем профессиональные услуги
+                        видеосъемки, главная задача которой – получить яркий,
+                        впечатляющий материал для ваших видео.
                     p.
-                        Это лучшее решение для съемки мероприятий на открытом воздухе,
-                        праздников, рекламных видеороликов, репортажей, видеоклипов,
-                        блоговых видео, недвижимости, ландшафта и других объектов.
-                        Стоимость аэросъемки зависит от масштабов проекта и специфических
-                        требований.
+                        Вы можете заказать у нас видеосъемку в Москве и других городах
+                        России для любых целей, будь то создание рекламного ролика для
+                        привлечения новых клиентов, материал для видеоконтента, повышающего
+                        узнаваемость бренда или же основа для корпоративного фильма.
 
     include ../components/sections/_advantages-section
 
@@ -91,35 +89,23 @@ block main
 
     include ../components/sections/_feedback-section
 
-    section.category-services
+    section.service-projects
         .container
-            .category-services__inner
-                .section-title Услуги видеосъемки
-                .category-services__items
-                    -
-                        var servicesItems = [
-                            "Аэросъемка", "Корпоративный фильм",
-                            "Съемка мероприятий", "Репортажная съемка", "Съемка интервью",
-                            "Промышленная съемка", "Рекламный видеоролик", "Съемка рекламного ролика",
-                            "Видеопродакшн", "Съемка конференций",
-                        ]
-                    each title, index in servicesItems
-                        a(href = "service.html").category-services__item
-                            .category-services__item-title= title
-                            .category-services__item-description
-                                p.
-                                    Короткометражные анимационные фильмы, в которых
-                                    главную роль играют не живые люди, а мультипликационные
-                                    персонажи или графические элементы видеоинфографики
-                            .category-services__item-image
-                                +img(`category-services-image-${index + 1}.jpg`)
+            .service-projects__inner
+                .section-title Наши проекты аэросъемки
+                .service-projects__items
+                    - var n = 1;
+                    while n <= 3
+                        a(href="project.html").service-projects__item
+                            .service-projects__item-title Название
+                            .service-projects__item-description Компания
+                            .service-projects__item-image
+                                +img(`service-projects-image-${n}.jpg`)
+                        - n++;
 
     include ../components/sections/_stages-section
 
     include ../components/sections/_components-section
-
-    include ../components/sections/_portfolio-section
-    +portfolioSection()
 
     include ../components/sections/_reviews-section
 

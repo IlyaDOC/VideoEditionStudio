@@ -1,0 +1,16 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Портфолио'
+    - var page = 'page-portfolio'
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Портфолио', '“В дебри” на Toyota с Кириллом Кикнадзе')
+    section.project
+        .container
+            .project__inner
+                .project__inner-title
+                    h1 “В дебри” на Toyota с Кириллом Кикнадзе
+                    .project__inner-title-logo
+                        +img('company-image-3.png')
