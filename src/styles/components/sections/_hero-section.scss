@@ -4,20 +4,21 @@
 .hero {
   height: 685px;
   position: relative;
-  transform: translateY(-82px);
+  margin-top: -83px;
 
   @include breakpoint(md) {
     height: 500px;
-    transform: translateY(-106px);
+
   }
 
   @include breakpoint(lg) {
     height: 594px;
-    transform: translateY(-122px);
+    margin-top: -103px;
   }
 
   @include breakpoint(xl) {
     height: 950px;
+    margin-top: -122px;
   }
 
   &__inner {

@@ -104,15 +104,10 @@ block main
                             "Видеопродакшн", "Съемка конференций",
                         ]
                     each title, index in servicesItems
-                        a(href = "service.html").category-services__item
-                            .category-services__item-title= title
-                            .category-services__item-description
-                                p.
-                                    Короткометражные анимационные фильмы, в которых
-                                    главную роль играют не живые люди, а мультипликационные
-                                    персонажи или графические элементы видеоинфографики
-                            .category-services__item-image
-                                +img(`category-services-image-${index + 1}.jpg`)
+                        include ../components/_service-item
+                        +serviceItem(title, index, "category-services-image")
+
+
 
     include ../components/sections/_stages-section
 

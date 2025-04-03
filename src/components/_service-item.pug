@@ -1,0 +1,12 @@
+mixin serviceItem(title, index, imageName)
+    a(href="service.html").service-item
+        .service-item__title= title
+        .service-item__hidden
+            .service-item__hidden-title // Заполняется через JS
+            .service-item__hidden-description
+                p.
+                    Короткометражные анимационные фильмы, в которых
+                    главную роль играют не живые люди, а мультипликационные
+                    персонажи или графические элементы видеоинфографики
+        .service-item__image
+            +img(`${imageName}-${index + 1}.jpg`)

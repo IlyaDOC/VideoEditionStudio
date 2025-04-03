@@ -1,0 +1,72 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.error {
+  &__inner {
+    display: grid;
+    text-align: center;
+    padding: 50px 0;
+
+    @include breakpoint(md) {
+      padding: 169px 0;
+    }
+
+    @include breakpoint(lg) {
+      padding: 40px 0;
+    }
+
+    @include breakpoint(xl) {
+      padding: 100px 0;
+    }
+
+    h1 {
+      @include breakpoint(md) {
+        display: none;
+      }
+    }
+
+    .h3-title {
+      @include breakpoint(md) {
+        display: none;
+      }
+    }
+
+    &-image {
+      margin: 4px 0;
+      aspect-ratio: 5/2;
+
+      @include breakpoint(md) {
+        margin: 0;
+      }
+    }
+
+    p {
+      color: $white-60;
+      font-size: 14px;
+      line-height: 140%; /* 19.6px */
+      margin-top: 24px;
+
+      @include breakpoint(md) {
+        margin-top: 32px;
+        max-width: 816px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 17px;
+      }
+
+      @include breakpoint(xl) {
+        margin-top: 40px;
+      }
+    }
+
+    .btn {
+      width: fit-content;
+      margin-top: 12px;
+      justify-self: center;
+
+      @include breakpoint(md) {
+        margin-top: 24px;
+      }
+    }
+  }
+}

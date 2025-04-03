@@ -1,0 +1,21 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Страница 404'
+    - var page = 'page-error'
+
+block main
+    section.error
+        .container
+            .error__inner
+                h1 Ошибка
+                .error__inner-image
+                    picture
+                        source(srcset="./assets/images/404-image-md-xl.svg" media="(min-width: 744px)")
+                        +img('404-image-s.svg')
+                .h3-title Страница не найдена
+                p.
+                    Вы находитесь здесь, потому что ввели адрес страницы,
+                    которая уже не существует или была перемещена по другому
+                    адресу
+                a(href="/").btn.btn-primary Перейти на главную

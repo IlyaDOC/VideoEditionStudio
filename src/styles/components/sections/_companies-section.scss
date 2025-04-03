@@ -2,6 +2,10 @@
 @use "../../base/variables" as *;
 
 .companies-section {
+
+  .swiper-wrapper {
+    transition-timing-function: linear;
+  }
   &__slider {
     margin-top: 24px;
     max-width: 1920px;

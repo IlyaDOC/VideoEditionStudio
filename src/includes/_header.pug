@@ -10,11 +10,11 @@ block header
                 .header__nav
                     nav
                         ul
-                            li
-                                a(href="javascript:void(0)") Главная
-                            li
+                            li.header__nav-item
+                                a(href="/") Главная
+                            li.header__nav-item
                                 a(href="about.html") О студии
-                            li.with-submenu
+                            li.with-submenu.header__nav-item
                                 .submenu-trigger
                                     a(href="services.html") Услуги
                                     .submenu-trigger__arrow
@@ -124,11 +124,11 @@ block header
                                                         a(href="javascript:void(0)") Мультипликация
                                                     li
                                                         a(href="javascript:void(0)") Рисованый ролик
-                            li
+                            li.header__nav-item
                                 a(href="prices.html") Цены
-                            li
+                            li.header__nav-item
                                 a(href="portfolio.html") Портфолио
-                            li
+                            li.header__nav-item
                                 a(href="contacts.html") Контакты
 
                 a(href="javascript:void(0)").header__language.btn.btn-primary ru

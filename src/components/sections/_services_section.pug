@@ -13,13 +13,6 @@ section.services-section
                         "Озвучка / дикторская озвучка",
                     ]
                 each title, index in servicesItems
-                    a(href="service.html").services-section__item
-                        .services-section__item-title= title
-                        .services-section__item-description
-                            p.
-                                Короткометражные анимационные фильмы, в которых
-                                главную роль играют не живые люди, а мультипликационные
-                                персонажи или графические элементы видеоинфографики
-                        .services-section__item-image
-                            +img(`services-section-image-${index + 1}.jpg`)
+                    include ../_service-item
+                    +serviceItem(title, index, "services-section-image")
 

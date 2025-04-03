@@ -7,15 +7,15 @@
 
 .breadcrumbs {
     margin-top: 8px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
     @include breakpoint(md) {
         margin-top: 16px;
-        margin-bottom: 70px;
+        margin-bottom: 60px;
     }
 
     @include breakpoint(lg) {
-        margin-bottom: 100px;
+        margin-bottom: 90px;
     }
 }
 
@@ -23,6 +23,7 @@
     @include flexAlignCenter;
     gap: 4px;
     overflow-x: auto;
+    padding-bottom: 10px;
 
     &::-webkit-scrollbar {
         border-radius: 3px;

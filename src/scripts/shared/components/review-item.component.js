@@ -8,6 +8,7 @@ export default class ReviewItemComponent {
         if (this.reviewItems) {
             this.reviewItems.forEach((reviewItem) => {
                 this.showMoreText(reviewItem);
+                // this.hideActionButtonsOnCommentSymbolCount(reviewItem);
             });
         }
     }
@@ -19,4 +20,15 @@ export default class ReviewItemComponent {
             reviewItemAction.classList.toggle("show-more");
         })
     }
+
+    // hideActionButtonsOnCommentSymbolCount(reviewItem) {
+    //     const reviewItemAction = reviewItem.querySelector(".review-item__action");
+    //     const reviewItemText = reviewItem.querySelector(".review-item__text p");
+    //
+    //     if (reviewItemText.textContent.length < 808) {
+    //         reviewItemAction.style.display = "none";
+    //     } else {
+    //         reviewItemAction.style.display = "";
+    //     }
+    // }
 }

@@ -1,0 +1,74 @@
+extends ../layout/layout
+
+block title
+    - var title = 'Контакты'
+    - var page = 'page-contacts'
+    - var yandexMap = true
+
+block main
+    include ../components/_breadcrumbs
+    +breadcrumbs('Контакты')
+    section.contacts
+        .container
+            .contacts__inner
+                h1 Контакты
+                .contacts__wrapper
+                    .contacts__main-items
+                        .contacts__main-item
+                            noindex
+                                a(href="javascript:void(0)" rel="nofollow").contacts__main-item-icon.icon-telegram
+                                    include ../icons/icon_telegram.svg
+                            .contacts__main-item-text
+                                p Telegram
+                                noindex
+                                    a(href="javascript:void(0)" rel="nofollow") @video_edition_studio_bot
+                        .contacts__main-item
+                            noindex
+                                a(href="javascript:void(0)" rel="nofollow").contacts__main-item-icon.icon-whatsapp
+                                    include ../icons/icon_whatsapp.svg
+                            .contacts__main-item-text
+                                p Whatsapp
+                                noindex
+                                    a(href="javascript:void(0)" rel="nofollow") +7 999 00 00 00
+                        .contacts__main-item
+                            noindex
+                                a(href="mailto:videoediting@studio" rel="nofollow").contacts__main-item-icon.icon-contacts
+                                    include ../icons/icon_mail.svg
+                            .contacts__main-item-text
+                                p E-mail
+                                noindex
+                                    a(href="mailto:videoediting@studio" rel="nofollow") videoediting@studio
+                        .contacts__main-item
+                            noindex
+                                a(href="tel:7999000000" rel="nofollow").contacts__main-item-icon.icon-contacts
+                                    include ../icons/icon_phone.svg
+                            .contacts__main-item-text
+                                p Телефон
+                                noindex
+                                    a(href="tel:7999000000" rel="nofollow") +7 999 00 00 00
+
+                    .contacts__address
+                        .h3-title Офис
+                        p г. Москва
+                        p.
+                            Новомосковский административный округ, поселение Сосенское,
+                            жилой комплекс Испанские Кварталы д.19, стр.31, офис В 24.
+                    .contacts__time
+                        .h3-title Время работы
+                        p Пн - Пт — 10:00 - 20:00
+                        p Сб - Вс — Выходной
+
+    section.map
+        .container
+            script.
+                let placemarks = [
+                    {
+                        coordinates: [55.5903660674912,37.44520349999996]
+                    }
+                ];
+                let centerPoint = [55.5903660674912,37.44520349999996];
+                let zoomValue = 17;
+            .map__wrapper
+                #map
+
+    include ../components/sections/_order-section

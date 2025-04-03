@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar } from 'swiper/modules';
+import {Navigation, Pagination, Autoplay, FreeMode, Thumbs, Scrollbar} from 'swiper/modules';
 
 export function initializeSlider() {
     const companiesSlider = new Swiper(".companies-section .swiper", {
@@ -8,10 +8,6 @@ export function initializeSlider() {
         spaceBetween: 12,
         speed: 3000,
         loop: true,
-        freeMode: {
-            enabled: true,
-            sticky: false
-        },
         autoplay: {
             delay: 0,
             pauseOnMouseEnter: true,
@@ -23,10 +19,12 @@ export function initializeSlider() {
             },
             1200: {
                 slidesPerView: 5.7,
-                spaceBetween: 4
+                spaceBetween: 4,
+                speed: 2000
             }
         }
     });
+
     const reviewsSlider = new Swiper(".reviews-section .swiper", {
         modules: [Navigation],
         slidesPerView: 1,
@@ -45,5 +43,5 @@ export function initializeSlider() {
                 spaceBetween: 20
             }
         }
-    })
+    });
 }

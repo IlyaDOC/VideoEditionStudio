@@ -14,3 +14,49 @@ block main
                     h1 “В дебри” на Toyota с Кириллом Кикнадзе
                     .project__inner-title-logo
                         +img('company-image-3.png')
+                .project__image
+                    +img('portfolio-image-1.jpg')
+
+    section.portfolio-about
+        .container
+            .portfolio-about__inner
+                .section-title О проекте
+                .portfolio-about__text
+                    p.
+                        Lorem ipsum dolor sit amet consectetur. Netus ornare tortor
+                        justo consequat. Diam fusce facilisi eget cras sem eget et
+                        justo viverra. Bibendum porttitor suscipit ac neque ante id
+                        augue etiam mattis. Amet tempor at ornare ut semper cursus.
+                        Sit fermentum ipsum porta sagittis amet sed.
+                    p.
+                        Lorem ipsum dolor sit amet consectetur. Netus ornare tortor 
+                        justo consequat. Diam fusce facilisi eget cras sem eget et 
+                        justo viverra. Bibendum porttitor suscipit ac neque ante id 
+                        augue etiam mattis. Amet tempor at ornare ut semper cursus. 
+                        Sit fermentum ipsum porta sagittis amet sed.Lorem ipsum dolor 
+                        sit amet consectetur. Netus ornare tortor justo consequat. 
+                        Diam fusce facilisi eget cras sem eget et justo viverra. 
+                        Bibendum porttitor suscipit ac neque ante id augue etiam 
+                        mattis. Amet tempor at ornare ut semper cursus. Sit 
+                        fermentum ipsum porta sagittis amet sed.
+
+    section.project-photos
+        .container
+            .project-photos__inner
+                .section-title Кадры из проекта
+                .project-photos__items
+                    - var n = 1;
+                    while n <= 8
+                        .project-photos__item(data-fancybox='gallery' data-src=`./assets/images/project-image-${n}.jpg`)
+                            +img(`project-image-${n}.jpg`)
+                        - n++;
+
+    include ../components/sections/_feedback-section
+
+    include ../components/sections/_advantages-section
+
+    include ../components/sections/_reviews-section
+
+    include ../components/sections/_seo-section
+
+    include ../components/sections/_order-section
