@@ -1,0 +1,6 @@
+mixin portfolioItem(selector, index)
+    a(href="project.html").portfolio-item
+        .portfolio-item__title Название
+        .portfolio-item__description Компания
+        .portfolio-item__image
+            +img(`${selector}-${index}.jpg`)

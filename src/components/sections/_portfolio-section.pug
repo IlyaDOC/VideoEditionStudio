@@ -8,11 +8,8 @@ mixin portfolioSection(type)
                 .portfolio-section__items
                     - var n = 1;
                     while n <= 9
-                        a(href="project.html").portfolio-section__item
-                            .portfolio-section__item-title Название
-                            .portfolio-section__item-description Компания
-                            .portfolio-section__item-image
-                                +img(`portfolio-image-${n}.jpg`)
+                        include ../_portfilio-item
+                        +portfolioItem("portfolio-image", n)
                         - n++;
                 if (type === "default")
                     button.btn.btn-primary заказать видеоролик

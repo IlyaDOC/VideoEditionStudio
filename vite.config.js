@@ -81,15 +81,17 @@ export default defineConfig({
 
     build: {
         minify: 'terser',
-
+        sourcemap: true,
         terserOptions: {
             compress: {
-                defaults: false
+                defaults: false, // отключаем сжатие
+                drop_console: false, // сохраняем console.log
+                drop_debugger: false // сохраняем debugger
             },
-            mangle: false,
+            mangle: false, // отключаем обфускацию имен
             format: {
-                beautify: true,
-                comments: 'all'
+                beautify: true, // сохраняем форматирование
+                comments: 'all' // сохраняем комментарии
             }
         },
 

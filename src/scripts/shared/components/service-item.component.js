@@ -17,6 +17,4 @@ export class ServiceItemComponent {
         const hiddenTitle = serviceItem.querySelector(".service-item__hidden-title");
         hiddenTitle.textContent = serviceItemTitle.textContent;
     }
-
-
 }

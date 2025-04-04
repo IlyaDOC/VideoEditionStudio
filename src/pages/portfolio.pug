@@ -21,11 +21,8 @@ block main
                 .portfolio__items
                     - var n = 1;
                     while n <= 9
-                        a(href="project.html").portfolio__item
-                            .portfolio__item-title Название
-                            .portfolio__item-description Компания
-                            .portfolio__item-image
-                                +img(`portfolio-image-${n}.jpg`)
+                        include ../components/_portfilio-item
+                        +portfolioItem("portfolio-image", n)
                         - n++;
                 a(href="javascript:void(0)").btn.btn-primary Показать еще
 

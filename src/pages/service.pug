@@ -96,11 +96,8 @@ block main
                 .service-projects__items
                     - var n = 1;
                     while n <= 3
-                        a(href="project.html").service-projects__item
-                            .service-projects__item-title Название
-                            .service-projects__item-description Компания
-                            .service-projects__item-image
-                                +img(`service-projects-image-${n}.jpg`)
+                        include ../components/_portfilio-item
+                        +portfolioItem("service-projects-image", n)
                         - n++;
 
     include ../components/sections/_stages-section
